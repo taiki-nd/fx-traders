@@ -1,6 +1,6 @@
 # テーブル設計
 
-## users テーブル
+## user テーブル
 
 | Column             | Type       | Options                  |
 | ------------------ | ---------- | ------------------------ |
@@ -17,7 +17,7 @@
 * has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
 * has_many :followers, through: :reverse_of_relationships, source: :user
 
-## records テーブル 
+## record テーブル 
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -36,8 +36,9 @@
 ### association
 
 * belongs_to :user
+* has_many :comments
 
-## methods テーブル
+## method テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -56,8 +57,9 @@
 ### association
 
 * belongs_to :user
+* has_many :methods
 
-## followテーブル
+## comment テーブル
 
 | Column    | Type       | Options                           |
 | --------- | ---------- | --------------------------------- |
@@ -68,3 +70,15 @@
 
 * belongs_to :user
 * belongs_to :follow, class_name: 'User'
+
+## follow テーブル
+
+| Column    | Type       | Options                           |
+| --------- | ---------- | --------------------------------- |
+| follow_id | references | foreign_key: { to_table: :users } |
+| user_id   | references | null: false, foreign_key: true    |
+
+### Association
+
+* belongs_to :record
+* belongs_to :method
