@@ -126,3 +126,6 @@ fx-traders
 
 * belongs_to :record
 * belongs_to :method
+
+## er図
+[![Image from Gyazo](https://i.gyazo.com/33c6f69bf011a0d37f0a9e569498da2d.png)](https://gyazo.com/33c6f69bf011a0d37f0a9e569498da2d)
