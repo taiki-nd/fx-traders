@@ -18,4 +18,11 @@ class Record < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image 
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :ashi
+  belongs_to :pair
+  belongs_to :issue
+  belongs_to :lose_reason
+
 end
