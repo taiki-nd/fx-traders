@@ -16,6 +16,16 @@
       <div class="heading" id="heading_id">
         <h1 class="title"><a href="/">FX traders</a></h1>
       </div>
+      
+      <% if user_signed_in? %>
+        <div class="current_user">
+          user :   <%= link_to current_user.name, "#", class: 'user_name' %>
+        </div>
+      <% else %>
+        <div class="current_user">
+          
+        </div>
+      <% end %>
   
       <nav id="nav_bar">
         <ul class="navi_list">  
