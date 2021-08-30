@@ -7,7 +7,7 @@ class Pair < ActiveHash::Base
     { id: 4, name: 'AUD/DKK' },
     { id: 5, name: 'AUD/GBP' },
     { id: 6, name: 'AUD/JPY' },
-    { id: 6, name: 'AUD/MXN' },
+    { id: 7, name: 'AUD/MXN' },
     { id: 8, name: 'AUD/NOK' },
     { id: 9, name: 'AUD/NZD' },
     { id: 10, name: 'AUD/PLN' },
@@ -115,8 +115,8 @@ class Pair < ActiveHash::Base
     { id: 112, name: 'BTC/USD' },
     { id: 113, name: 'ETH/USD' },
     { id: 114, name: 'LTC/USD' },
-    { id: 115, name: 'XRP/USD' }
-    
+    { id: 115, name: 'XRP/USD' },
+    { id: 116, name: 'その他' }
   ]
  
    include ActiveHash::Associations

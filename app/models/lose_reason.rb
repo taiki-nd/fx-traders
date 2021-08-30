@@ -8,6 +8,7 @@ class LoseReason < ActiveHash::Base
     { id: 6, name: '利食いが早過ぎた' },
     { id: 7, name: 'エントリーが早過ぎた' },
     { id: 8, name: 'エントリーが遅過ぎた' }
+    { id: 9, name: 'その他' }
   ]
  
    include ActiveHash::Associations

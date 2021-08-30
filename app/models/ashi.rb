@@ -13,7 +13,8 @@ class Ashi < ActiveHash::Base
     { id: 11, name: '8時間足' },
     { id: 12, name: '日足' },
     { id: 13, name: '週足' },
-    { id: 14, name: '月足' }
+    { id: 14, name: '月足' },
+    { id: 15, name: 'その他' }
   ]
  
    include ActiveHash::Associations
