@@ -4,6 +4,8 @@
         <%= form_with model: @record, local: true do |form| %>
             <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください</p>
             <%= form.file_field :image, class:"record_new" %>
+            <p class="explain">取引した日付の選択をしてください<b class="indispensable">(必須)</b></p>
+            <%= form.date_field :date, class:"record_new" %>
             <p class="explain">通貨ペアの選択をしてください<b class="indispensable">(必須)</b></p>
             <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"})%>
             <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
@@ -14,7 +16,7 @@
             <%= form.text_field :exit_rate, placeholder: "イグジット価格" %>
             <p class="explain">獲得pipsを入力してください<b class="indispensable">(必須)</b></p>
             <%= form.text_field :pips, placeholder: "獲得pips(20.5, -11.5)" %>
-            <p class="explain">エントリーした根拠を入力してください</p>
+            <p class="explain">エントリーした根拠を入力してください<b class="indispensable">(必須)</b></p>
             <%= form.text_field :entry_basis, placeholder: "エントリー根拠" %>
             <p class="explain">勝敗を選択してください<b class="indispensable">(必須)</b></p>
             <%= form.collection_select(:issue_id, Issue.all, :id, :name, {}, {class:"select-box", id:"issue"})%>

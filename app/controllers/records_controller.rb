@@ -6,8 +6,8 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    if item.save
-      redirect_to action: :index
+    if @record.save
+      redirect_to root_path
     else
       render :new
     end
