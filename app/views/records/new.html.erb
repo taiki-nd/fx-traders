@@ -1,17 +1,27 @@
 <div class="content">
     <div class="container">
-        <h3>追加する</h3>
-        <%= form_with(model: @record, local: true) do |form| %>
-            <%= form.file_field :image, placeholder: "image" %>
-            <%= form.collection_select (:hoge, :hoge, :id, :name, {}, {class:"select-box", id:"ashi"})%>
-            <%= form.collection_select (:hoge, :hoge, :id, :name, {}, {class:"select-box", id:"pair"})%>
+        <h2>create trading record</h2>
+        <%= form_with model: @record, local: true do |form| %>
+            <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください</p>
+            <%= form.file_field :image, class:"record_new" %>
+            <p class="explain">通貨ペアの選択をしてください<b class="indispensable">(必須)</b></p>
+            <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"})%>
+            <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
+            <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
+            <p class="explain">エントリー価格を入力してください</p>
             <%= form.text_field :entry_rate, placeholder: "エントリー価格" %>
+            <p class="explain">イグジット価格を入力してください</p>
             <%= form.text_field :exit_rate, placeholder: "イグジット価格" %>
+            <p class="explain">獲得pipsを入力してください<b class="indispensable">(必須)</b></p>
             <%= form.text_field :pips, placeholder: "獲得pips(20.5, -11.5)" %>
+            <p class="explain">エントリーした根拠を入力してください</p>
             <%= form.text_field :entry_basis, placeholder: "エントリー根拠" %>
-            <%= form.collection_select (:hoge, :hoge, :id, :name, {}, {class:"select-box", id:"issue"})%>
-            <%= form.collection_select (:hoge, :hoge, :id, :name, {}, {class:"select-box", id:"lose_reason"})%>
-            <%= form.text_field :lose_reason_text, placeholder: "なぜ勝ったのか、なぜ負けたのか、その他" %>
+            <p class="explain">勝敗を選択してください<b class="indispensable">(必須)</b></p>
+            <%= form.collection_select(:issue_id, Issue.all, :id, :name, {}, {class:"select-box", id:"issue"})%>
+            <p class="explain">損失が出た一番の理由を選択してください</p>
+            <%= form.collection_select(:lose_reason_id, LoseReason.all, :id, :name, {}, {class:"select-box", id:"lose_reason"})%>
+            <p class="explain">本取引の総括を入力してください<b class="indispensable">(必須)</b></p>
+            <%= form.text_area :lose_reason_text, placeholder: "なぜ勝ったのか、なぜ負けたのか、その他", size: "30x10" %>
             <%= form.submit "record trade" %>
         <% end %>
     </div>
