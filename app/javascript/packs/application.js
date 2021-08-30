@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require('jquery')
+require('packs/menu.js')
 
 Rails.start()
 Turbolinks.start()
