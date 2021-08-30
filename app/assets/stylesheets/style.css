@@ -28,6 +28,166 @@ img{
   color: #fff;
 }
 
+/* header ---------------------------------------------------------------------*/
+
+#header{
+  width: 100%;
+  height: 30px;
+  color: #212121;
+  position: fixed;
+  background-color: #fff;
+  border-bottom: 1px solid #212121;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+}
+
+.heading{
+  width: 50%;
+  height: 30px;
+  margin-left: 30px;
+}
+
+.heading h1{
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+#heading_id a{
+  text-decoration: none;
+  color: #212121;
+}
+
+.current_user{
+  margin-left: 200px;
+}
+
+.user_name{
+  color: #212121;
+  text-decoration: none;
+}
+
+#nav_bar a{
+  text-decoration: none;
+  color: #fff;
+}
+
+#nav_bar{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -300px;
+  width: 300px;
+  background-color: #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 20;
+  opacity: 0;
+}
+
+.open #nav_bar{
+  right: 0;
+  opacity: 1;
+}
+
+.navi_list{
+  font-size: 1.5rem;
+}
+
+.navi{
+  display: block;
+  width: 250px;
+  border-bottom: 1px solid #fff;
+  margin: 10px;
+  color: #fff;
+}
+
+.navi_log{
+  font-size: 1.2rem;
+  margin-top: 100px;
+}
+
+.navi_pages{
+  font-size: 1rem;
+  margin-top: 100px;
+}
+
+/*----------------------------------------*/
+
+.toggle_btn{
+  display: block;
+  position: fixed;
+  top: 3px;
+  right: 45px;
+  width: 25px;
+  height: 25px;
+  transition: all 1s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.toggle_btn span{
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #212121;
+  border-radius: 4px;
+  transition: all 1s;
+}
+
+.toggle_btn span:nth-child(1){
+  top: 4px;
+}
+
+.toggle_btn span:nth-child(2){
+  top: 11px;
+}
+
+.toggle_btn span:nth-child(3){
+  bottom: 5px;
+}
+
+.open .toggle_btn span{
+  background-color: #fff;
+}
+
+.open .toggle_btn span:nth-child(1){
+  -webkit-transform: translateY(7px) rotate(-315deg);
+  transform: translateY(7px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2){
+  opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3){
+  -webkit-transform: translateY(-7px) rotate(315deg);
+  transform: translateY(-7px) rotate(315deg);
+}
+
+#mask{
+  display: none;
+}
+
+.open #mask{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 10;
+  background-color: #212121;
+  cursor: pointer;
+}
+
 /* 入力系 ---------------------------------------------------------------------*/
 
 form input,
