@@ -65,10 +65,9 @@ fx-traders
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| date             | references | null: false                    |
+| date             | date       | null: false                    |
 | ashi             | integer    | null: false                    |
 | pair             | integer    | null: false                    |
-| pair_other       | string     | null: false                    |
 | entry_rate       | float      | null: false                    |
 | exit_rate        | float      | null: false                    |
 | pips             | float      | null: false                    |
@@ -91,7 +90,6 @@ fx-traders
 | issue            | integer    | null: false                    |
 | ashi             | integer    | null: false                    |
 | pair             | integer    | null: false                    |
-| pair_other       | string     | null: false                    |
 | overview         | string     | null: false                    |
 | overview_content | text       | null: false                    |
 | entry            | text       | null: false                    |
