@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 2021_08_30_080600) do
 
   create_table "records", charset: "utf8", force: :cascade do |t|
     t.date "date"
-    t.integer "ashi"
-    t.integer "pair"
+    t.integer "ashi_id"
+    t.integer "pair_id"
     t.float "entry_rate"
     t.float "exit_rate"
     t.float "pips"
     t.text "entry_basis"
-    t.integer "issue"
-    t.integer "lose_reason"
+    t.integer "issue_id"
+    t.integer "lose_reason_id"
     t.text "lose_reason_text"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
