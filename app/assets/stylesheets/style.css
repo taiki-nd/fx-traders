@@ -28,6 +28,10 @@ img{
   color: #fff;
 }
 
+.page_title{
+  margin-top: 60px;
+}
+
 h2{
   display: flex;
   justify-content: center;
