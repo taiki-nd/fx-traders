@@ -4,7 +4,7 @@ class Record < ApplicationRecord
     validates :date
     validates :ashi_id
     validates :pair_id
-    validates :pips, format: {with: /\A[-]?[0-9]+(\.[0-9]+)?\z/}
+    validates :pips, numericality: true
     validates :entry_basis
     validates :issue_id
     validates :lose_reason_text
