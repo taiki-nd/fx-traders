@@ -305,6 +305,7 @@ form input[type="submit"]:hover {
 }
 
 .record{
+  width: 300px;
   display: inline-block;
 }
 

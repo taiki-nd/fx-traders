@@ -13,7 +13,7 @@ class RecordsController < ApplicationController
   def create
     @record = Record.new(record_params)
     if @record.save
-      redirect_to root_path
+      redirect_to records_path
     else
       render :new
     end
