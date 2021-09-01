@@ -324,3 +324,7 @@ form input[type="submit"]:hover {
   color: #656869;
   font-size: 0.8rem;
 }
+
+.link_to_user{
+  color: #656869;
+}
