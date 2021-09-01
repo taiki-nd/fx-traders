@@ -1,5 +1,9 @@
 class RecordsController < ApplicationController
 
+  def index
+    @records = Record.includes(:user).order("created_at DESC")
+  end
+  
   def new
     @record = Record.new
   end
