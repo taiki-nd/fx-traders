@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
 
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -17,6 +17,10 @@ class RecordsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @record = Record.find(params[:id])
   end
 
   private
