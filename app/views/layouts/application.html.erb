@@ -29,7 +29,7 @@
   
       <nav id="nav_bar">
         <ul class="navi_list">  
-          <li class="navi"><a href="#">top</a></li>
+          <li class="navi"><%= link_to 'top', root_path  %></li>
           <li class="navi"><a href="#">all records</a></li>
           <li class="navi"><a href="#">all methods</a></li>
         </ul>
@@ -37,7 +37,7 @@
           <% if user_signed_in? %>
             <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <li class="navi"><%= link_to 'マイページ', "#" %></li>
-            <li class="navi"><%= link_to 'create record', "#" %></a></li>
+            <li class="navi"><%= link_to 'create record', new_record_path %></a></li>
             <li class="navi"><%= link_to 'crerte method', "#" %></a></li>
           <% else %>
             <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>

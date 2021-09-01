@@ -65,16 +65,15 @@ fx-traders
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| date             | references | null: false                    |
-| ashi             | integer    | null: false                    |
-| pair             | integer    | null: false                    |
-| pair_other       | string     | null: false                    |
+| date             | date       | null: false                    |
+| ashi_id          | integer    | null: false                    |
+| pair_id          | integer    | null: false                    |
 | entry_rate       | float      | null: false                    |
 | exit_rate        | float      | null: false                    |
 | pips             | float      | null: false                    |
 | entry_basis      | text       | null: false                    |
-| issue            | integer    | null: false                    |
-| lose_reason      | integer    | null: false                    |
+| issue_id         | integer    | null: false                    |
+| lose_reason_id   | integer    | null: false                    |
 | lose_reason_text | text       | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
@@ -88,10 +87,9 @@ fx-traders
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | name             | string     | null: false                    |
-| issue            | integer    | null: false                    |
-| ashi             | integer    | null: false                    |
-| pair             | integer    | null: false                    |
-| pair_other       | string     | null: false                    |
+| issue_id         | integer    | null: false                    |
+| ashi_id          | integer    | null: false                    |
+| pair_id          | integer    | null: false                    |
 | overview         | string     | null: false                    |
 | overview_content | text       | null: false                    |
 | entry            | text       | null: false                    |
