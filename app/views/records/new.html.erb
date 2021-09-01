@@ -2,6 +2,7 @@
     <div class="container">
         <h2>create trading record</h2>
         <%= form_with model: @record, local: true do |form| %>
+            <%= render 'shared/error_messages', model: form.object %>
             <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください</p>
             <%= form.file_field :image, class:"record_new" %>
             <p class="explain">取引した日付の選択をしてください<b class="indispensable">(必須)</b></p>
