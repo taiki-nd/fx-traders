@@ -4,7 +4,7 @@
     <% @records.each do |record| %>
       <div class="record">
       <% if record.image.attached? %>
-        <%= link_to image_tag(record.image, class:"recorded_img"), "#" %>
+        <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
       <% else %>
         <%= link_to image_tag("sample.jpg", class:"recorded_img"), "#" %>
       <% end %>
