@@ -1,6 +1,6 @@
 class RulesController < ApplicationController
 
-  before_action :authenticate_user! expect: [:index, :show]
+  before_action :authenticate_user!, expect: [:index, :show]
   before_action :set_rule, only: [:edit, :update, :show]
 
   def index
@@ -25,7 +25,7 @@ class RulesController < ApplicationController
   end
 
   def update
-    if @rule.update
+    if @rule.update(rule_params)
       redirect_to action: :show
     else
       render action: :edit
@@ -40,6 +40,10 @@ class RulesController < ApplicationController
 
   def rule_params
     params.require(:rule).permit(:name, :ashi_id, :pair_id, :entry, :exit, :issue_id, :overview, :overview_content, :summary, :image).merge(user_id: current_user.id)
+  end
+
+  def set_rule
+    @rule = Rule.find(params[:id])
   end
 
 end
