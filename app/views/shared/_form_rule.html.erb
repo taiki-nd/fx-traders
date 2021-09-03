@@ -1,0 +1,26 @@
+<%= form_with model: rule, local: true do |form| %>
+  <%= render 'shared/error_messages', model: form.object %>
+  <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください<b class="indispensable">(必須)</b></p>
+  <%= form.file_field :image, class:"record_new" %>
+  <p class="explain">取引手法の名前を入力してください<b class="indispensable">(必須)</b></p>
+  <%= form.text_field :name, placeholder: "SMAとRSIを用いた◯◯◯◯◯◯◯" %>
+  <p class="explain">通貨ペアの選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"}) %>
+  <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
+  <p class="explain">勝てますか？負けますか？<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:issue_id, Issue.all, :id, :name, {}, {class:"select-box", id:"issue"}) %>
+  <p class="explain">取引手法の概要のタイトル<b class="indispensable">(必須)</b></p>
+  <%= form.text_field :overview, placeholder: "インジケーター少なめのシンプル手法" %>
+  <p class="explain">取引手法の概要<b class="indispensable">(必須)</b></p>
+  <%= form.text_area :overview_content, placeholder: "25期間SMAと14期間RSIを用いて、押し目買いと戻り売りを狙っていく手法です。この手法は...", size: "30x10" %>
+  <p class="explain">エントリータイミング<b class="indispensable">(必須)</b></p>
+  <%= form.text_area :entry, placeholder: "①25SMAが上昇方向に傾きがある
+②14RSIが50を上に抜けたタイミングで買い
+＊売りは買いの逆", size: "30x10" %>
+  <p class="explain">利確と損切りについて<b class="indispensable">(必須)</b></p>
+  <%= form.text_area :exit, placeholder: "買いポジションを持っている場合、損切りは直近安値で、利食いはその1.5倍に設定する", size: "30x10" %>
+  <p class="explain">総括、その他備考の記述をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.text_area :summary, placeholder: "この手法はハイレバレッジにも有効で...", size: "30x10" %>
+  <%= form.submit "create method" %>
+<% end %>
