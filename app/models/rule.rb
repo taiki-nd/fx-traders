@@ -18,4 +18,6 @@ class Rule < ApplicationRecord
     validates :issue_id
   end
 
+  belongs_to :user
+
 end
