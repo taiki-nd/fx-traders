@@ -323,6 +323,7 @@ form input[type="submit"]:hover {
   margin-top: 40px;
   gap: 25px;
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -338,7 +339,8 @@ form input[type="submit"]:hover {
 }
 
 .info{
-  margin-left: 10px;
+  margin: 5px 10px 0;
+  padding: 0;
 }
 
 .created_by{
@@ -351,6 +353,34 @@ form input[type="submit"]:hover {
 .link_to_user{
   color: #656869;
 }
+
+.grid_{
+  margin-top: 40px;
+  gap: 25px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.rule{
+  width: 90%;
+  height: 100px;
+  display: inline-block;
+  display: flex;
+  border-bottom: 1px solid #212121;
+}
+
+.rule_right{
+  width: 40vw ;
+}
+
+.rule_img{
+  height: 100px;
+  width: 150px;
+  object-fit: cover;
+}
+
 
 /* 詳細表示 ---------------------------------------------------------------------*/
 

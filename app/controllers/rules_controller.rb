@@ -2,6 +2,10 @@ class RulesController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+    @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
+  end
+
   def new
     @rule = Rule.new
   end
@@ -9,7 +13,7 @@ class RulesController < ApplicationController
   def create
     @rule = Rule.new(rule_params)
     if @rule.save
-      redirect_to root_path
+      redirect_to rules_path
     else
       render :new
     end
