@@ -8,5 +8,6 @@ class Issue < ActiveHash::Base
  
    include ActiveHash::Associations
    has_many :records
+   has_many :rules
  
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_080600) do
+ActiveRecord::Schema.define(version: 2021_09_03_050316) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +57,22 @@ ActiveRecord::Schema.define(version: 2021_08_30_080600) do
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
+  create_table "rules", charset: "utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "issue_id"
+    t.integer "ashi_id"
+    t.integer "pair_id"
+    t.string "overview"
+    t.text "overview_content"
+    t.text "entry"
+    t.text "exit"
+    t.text "summary"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rules_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +88,5 @@ ActiveRecord::Schema.define(version: 2021_08_30_080600) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "rules", "users"
 end

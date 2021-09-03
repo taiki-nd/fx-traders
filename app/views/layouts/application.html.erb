@@ -31,14 +31,14 @@
         <ul class="navi_list">  
           <li class="navi"><%= link_to 'top', root_path  %></li>
           <li class="navi"><%= link_to 'みんなの取引記録', records_path %></li>
-          <li class="navi"><a href="#">all methods</a></li>
+          <li class="navi"><%= link_to 'みんなの取引手法', '#' %></li>
         </ul>
         <ul class="navi_log">
           <% if user_signed_in? %>
             <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <li class="navi"><%= link_to 'マイページ', "#" %></li>
             <li class="navi"><%= link_to 'create record', new_record_path %></a></li>
-            <li class="navi"><%= link_to 'crerte method', "#" %></a></li>
+            <li class="navi"><%= link_to 'crerte method', new_rule_path %></a></li>
           <% else %>
             <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>
             <li class="navi"><%= link_to '新規登録', new_user_registration_path %></li>
