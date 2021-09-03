@@ -53,8 +53,9 @@ class RecordsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in? && current_user.id == @item.user_id
+    unless user_signed_in? && current_user.id == @record.user_id
       redirect_to action: :index
     end
+  end
 
 end
