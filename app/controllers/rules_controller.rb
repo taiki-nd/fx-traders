@@ -1,6 +1,7 @@
 class RulesController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user! expect: [:index, :show]
+  before_action :set_rule, only: [:edit, :update, :show]
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -19,8 +20,20 @@ class RulesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    if @rule.update
+      redirect_to action: :show
+    else
+      render action: :edit
+    end
+  end
+
   def show
-    @rule = Rule.find(params[:id])
+    
   end
 
   private
