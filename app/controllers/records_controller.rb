@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_record only: [:edit, :update, :show]
+  before_action :set_record, only: [:edit, :update, :show]
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
