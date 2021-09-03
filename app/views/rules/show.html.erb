@@ -59,7 +59,7 @@
     <div class="lose_reason">
       <h3>投稿者専用エリア</h3>
         <div class="btn btn--white btn--radius">
-          <%= link_to '編集', '#', class: 'btn_word' %>
+          <%= link_to '編集', edit_rule_path(@rule.id), class: 'btn_word' %>
         </div>
         <div class="btn btn--white btn--radius">
         <%= link_to '削除', '#', method: :delete, class: 'btn_word'%>
