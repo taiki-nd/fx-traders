@@ -1,7 +1,6 @@
 class Record < ApplicationRecord
 
   with_options presence: true do
-    validates :image
     validates :date
     validates :ashi_id
     validates :pair_id
