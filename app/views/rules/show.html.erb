@@ -1,0 +1,69 @@
+<section class="content">
+  <h2><%= @rule.name %></h2>
+  <div class="record_content">
+    <div class="left_content">
+      <h3>取引画像</h3>
+      <%= link_to image_tag(@rule.image, class:"recorded_img_show") %>
+    </div>
+    <div class="right_content">
+      <h3>取引概要</h3>
+      <table>
+        <tr>
+          <th>推奨通貨ペア</th>
+          <td><%= @rule.pair.name %> </td>
+        </tr>
+        <tr>
+          <th>推奨時間足</th>
+          <td><%= @rule.ashi.name %> </td>
+        </tr>
+        <% if @rule.issue.id == 2 %>
+          <tr>
+            <th>勝てる？負ける？</th>
+            <td>勝てる</td>
+          </tr>
+        <% elsif @rule.issue.id == 3 %>
+          <tr>
+            <th>勝てる？負ける？</th>
+            <td>負ける</td>
+          </tr>
+        <% else %>
+          <tr>
+            <th>勝てる？負ける？</th>
+            <td>微妙なところ</td>
+          </tr>
+        <% end %>
+        <tr>
+          <th>created by</th>
+          <td><%= link_to @rule.user.name, '#' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="entry_basis">
+    <h3><%= @rule.overview %></h3>
+    <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
+  </div>
+  <div class="entry_basis">
+    <h3>エントリータイミング</h3>
+    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+  </div>
+  <div class="entry_basis">
+    <h3>決済タイミング</h3>
+    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+  </div>
+  <div class="lose_reason">
+    <h3>今回の取引の総括</h3>
+    <%= safe_join(@rule.exit.split("\n"),tag(:br)) %>
+  </div>
+  <% if user_signed_in? && current_user.id == @rule.user_id %>
+    <div class="lose_reason">
+      <h3>投稿者専用エリア</h3>
+        <div class="btn btn--white btn--radius">
+          <%= link_to '編集', '#', class: 'btn_word' %>
+        </div>
+        <div class="btn btn--white btn--radius">
+        <%= link_to '削除', '#', method: :delete, class: 'btn_word'%>
+      </div>
+    </div>
+  <% end %>
+</section>

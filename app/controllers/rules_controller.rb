@@ -19,6 +19,10 @@ class RulesController < ApplicationController
     end
   end
 
+  def show
+    @rule = Rule.find(params[:id])
+  end
+
   private
 
   def rule_params
