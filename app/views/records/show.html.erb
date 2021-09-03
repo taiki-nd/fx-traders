@@ -78,13 +78,11 @@
     <% if user_signed_in? && current_user.id == @record.user_id %>
       <div class="lose_reason">
         <h3>投稿者専用エリア</h3>
-        <div class="">
           <div class="btn btn--white btn--radius">
             <%= link_to '編集', edit_record_path(@record.id), class: 'btn_word' %>
           </div>
           <div class="btn btn--white btn--radius">
-          <%= link_to '削除', '#', class: 'btn_word'%>
-          </div>
+          <%= link_to '削除', record_path(@record.id), method: :delete, class: 'btn_word'%>
         </div>
       </div>
     <% end %>
