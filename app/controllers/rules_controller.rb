@@ -1,7 +1,8 @@
 class RulesController < ApplicationController
 
   before_action :authenticate_user!, expect: [:index, :show]
-  before_action :set_rule, only: [:edit, :update, :show]
+  before_action :set_rule, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -32,6 +33,11 @@ class RulesController < ApplicationController
     end
   end
 
+  def destroy
+    @rule.destroy
+    redirect_to rules_path
+  end
+
   def show
     
   end
@@ -44,6 +50,12 @@ class RulesController < ApplicationController
 
   def set_rule
     @rule = Rule.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in? && current_user.id == @rule.user_id
+      redirect_to action: :index
+    end
   end
 
 end
