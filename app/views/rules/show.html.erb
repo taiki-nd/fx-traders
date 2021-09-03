@@ -40,22 +40,30 @@
     </div>
   </div>
   <div class="entry_basis">
-      <h3><%= @rule.overview %></h3>
-      <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
-    </div>
+    <h3><%= @rule.overview %></h3>
+    <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
+  </div>
+  <div class="entry_basis">
+    <h3>エントリータイミング</h3>
+    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+  </div>
+  <div class="entry_basis">
+    <h3>決済タイミング</h3>
+    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+  </div>
+  <div class="lose_reason">
+    <h3>今回の取引の総括</h3>
+    <%= safe_join(@rule.exit.split("\n"),tag(:br)) %>
+  </div>
+  <% if user_signed_in? && current_user.id == @rule.user_id %>
     <div class="lose_reason">
-      <h3>今回の取引の総括</h3>
-      <%= safe_join(@rule.summary.split("\n"),tag(:br)) %>
-    </div>
-    <% if user_signed_in? && current_user.id == @rule.user_id %>
-      <div class="lose_reason">
-        <h3>投稿者専用エリア</h3>
-          <div class="btn btn--white btn--radius">
-            <%= link_to '編集', '#', class: 'btn_word' %>
-          </div>
-          <div class="btn btn--white btn--radius">
-          <%= link_to '削除', '#', method: :delete, class: 'btn_word'%>
+      <h3>投稿者専用エリア</h3>
+        <div class="btn btn--white btn--radius">
+          <%= link_to '編集', '#', class: 'btn_word' %>
         </div>
+        <div class="btn btn--white btn--radius">
+        <%= link_to '削除', '#', method: :delete, class: 'btn_word'%>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 </section>
