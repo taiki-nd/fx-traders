@@ -23,13 +23,24 @@ img{
   margin-left: 20px;
 }
 
-.small_btn{
-  text-decoration: none;
-  border: 1px solid #212121;
-  border-radius: 10px;
-  padding: 2px;
+.btn--white{
   background-color: #212121;
+  text-decoration: none;
+  width: 300px;
+  margin: 15px auto;
+}
+
+.btn--radius {
+   border-radius: 300px;
+}
+
+.btn_word{
   color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 15px;
 }
 
 h2{
@@ -88,7 +99,7 @@ h3 {
   width: 60%;
   margin: 20px auto;
   padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  box-shadow: 0 0 10px #212121;
   background-color: #fff;
   box-sizing: border-box;
 }
