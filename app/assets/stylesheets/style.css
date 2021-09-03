@@ -75,7 +75,7 @@ h3 {
   background-image: -webkit-gradient(linear, left top, right top, from(#000000), to(#ffffff));
   background-image: -webkit-linear-gradient(left, #000000 0%, #ffffff 100%);
   background-image: linear-gradient(to right, #000000 0%, #ffffff 100%);
-  width: 400px;
+  width: 500px;
 }
 
 
@@ -96,7 +96,7 @@ h3 {
 }
 
 .container_sign {
-  width: 60%;
+  width: 50%;
   margin: 20px auto;
   padding: 30px;
   box-shadow: 0 0 10px #212121;

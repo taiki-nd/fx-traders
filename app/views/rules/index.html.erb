@@ -4,7 +4,7 @@
     <% @rules.each do |rule| %>
       <div class="rule">
         <div class="rule_left">
-          <%= link_to image_tag(rule.image, class:"rule_img"), "#" %> 
+          <%= link_to image_tag(rule.image, class:"rule_img"), rule_path(rule.id) %> 
         </div>
         <div class="rule_right">
           <p class="info">
