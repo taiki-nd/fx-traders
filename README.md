@@ -55,7 +55,7 @@ fx-traders
 ### Association
 
 * has_many :records
-* has_many :methods
+* has_many :rules
 * has_many :relationships
 * has_many :followings, through: :relationships, source: :follow
 * has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
@@ -82,7 +82,7 @@ fx-traders
 * belongs_to :user
 * has_many :comments
 
-## method テーブル
+## rule テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -100,7 +100,7 @@ fx-traders
 ### association
 
 * belongs_to :user
-* has_many :methods
+* has_many :comments
 
 ## comment テーブル
 
