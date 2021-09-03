@@ -19,5 +19,11 @@ class Rule < ApplicationRecord
   end
 
   belongs_to :user
+  has_one_attached :image 
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :ashi
+  belongs_to :pair
+  belongs_to :issue
 
 end
