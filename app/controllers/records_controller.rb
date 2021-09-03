@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_record, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -50,5 +51,10 @@ class RecordsController < ApplicationController
   def set_record
     @record = Record.find(params[:id])
   end
+
+  def move_to_index
+    unless user_signed_in? && current_user.id == @item.user_id
+      redirect_to action: :index
+    end
 
 end
