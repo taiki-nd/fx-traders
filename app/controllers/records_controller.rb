@@ -36,6 +36,11 @@ class RecordsController < ApplicationController
     
   end
 
+  def destroy
+    @item.destroy
+    redirect_to records_path
+  end
+
   private
 
   def record_params
