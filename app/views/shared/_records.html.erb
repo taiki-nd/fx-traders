@@ -1,5 +1,4 @@
-<% @records.each do |record| %>
-  <div class="record">
+<div class="record">
   <% if record.image.attached? %>
     <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
   <% else %>
@@ -18,5 +17,4 @@
   <p class="created_by">
     by <%= link_to record.user.name, "/users/#{record.user_id}", {class: "link_to_user"} %>
   </p>
-  </div>
-<% end %>
+</div>
