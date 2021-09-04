@@ -1,6 +1,19 @@
 <section class="content">
   <h2><%= @name %>さんのページ</h2>
   <h3><%= @name %>さんの取引分析</h3>
+  <h4>獲得pips数</h4>
+  <%= column_chart @records_by_user.group(:date).sum(:pips) %>
+  <h4>取引通貨ペア</h4>
+  <%= pie_chart @records_by_user.group(:pair_id).count %>
+  <h4>全体勝率</h4>
+  <%= pie_chart @records_by_user.group(:issue_id).count %>
+  <h4>通貨ペア別勝率</h4>
+  <% @pair_cat.each do |pair_cat| %>
+    <% pair_rate = Record.where(pair_id: pair_cat) %>
+    <%= pair_cat %>の勝率
+    <%=  pie_chart pair_rate.group(:issue_id).count %>
+  <% end %>
+  
   <h3><%= @name %>さんの取引履歴</h3>
   <div class="grid">
     <% @records.each do |record| %>
