@@ -19,7 +19,7 @@
         <% end %>
       </p>
       <p class="created_by">
-        by <%= link_to record.user.name, '#', {class: "link_to_user"} %>
+        by <%= link_to record.user.name, "/users/#{record.user_id}", {class: "link_to_user"} %>
       </p>
       </div>
     <% end %>

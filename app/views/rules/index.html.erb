@@ -14,7 +14,7 @@
             推奨通貨ペア → <%= rule.pair.name %> ( <%= rule.ashi.name%> )
           </p>
           <p class="created_by">
-            by <%= link_to rule.user.name, '#', {class: "link_to_user"} %>
+            by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
           </p>
         </div>
       </div>
