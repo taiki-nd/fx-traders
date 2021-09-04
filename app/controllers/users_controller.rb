@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @records = @user.records.order("created_at DESC").page(params[:page]).per(12)
     @rules = @user.rules.order("created_at DESC").page(params[:page]).per(8)
     @records_by_user = Record.where(user_id: @user.id)
-    @pair_cat = Record.group(:pair_id).pluck(:pair_id)
+    @pair_cat = @records_by_user.group(:pair_id).pluck(:pair_id)
   end
 
 end
