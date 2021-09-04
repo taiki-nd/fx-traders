@@ -7,10 +7,16 @@
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
+  <div class="pagi">
+    <%= paginate @records %>
+  </div>
   <h3><%= @name %>さんの取引手法</h3>
   <div class="grid_">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>
+  </div>
+  <div class="pagi">
+    <%= paginate @rules %>
   </div>
 </section>

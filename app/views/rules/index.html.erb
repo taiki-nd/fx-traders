@@ -5,6 +5,7 @@
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>
   </div>
-  
-  <%= paginate @rules %>
+  <div class="pagi">
+    <%= paginate @rules %>
+  </div>
 </section>

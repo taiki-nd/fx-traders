@@ -5,6 +5,8 @@
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
-  <%= paginate @records %>
+  <div class="pagi">
+    <%= paginate @records %>
+  </div>
 </section>
 
