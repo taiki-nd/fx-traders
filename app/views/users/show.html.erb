@@ -1,0 +1,50 @@
+<section class="content">
+  <h2><%= @name %>さんのページ</h2>
+  <h3><%= @name %>さんの取引分析</h3>
+  <h3><%= @name %>さんの取引履歴</h3>
+  <div class="grid">
+    <% @records.each do |record| %>
+      <div class="record">
+      <% if record.image.attached? %>
+        <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
+      <% else %>
+        <%= link_to image_tag("sample.jpg", class:"recorded_img"), record_path(record.id) %>
+      <% end %>
+      <p class="info">
+        <%= record.pair.name %>の取引 →
+        <% if record.issue.id == 2 %>
+          <b><%= record.pips%>pips獲得！</b>
+        <% elsif record.issue.id == 3 %>
+          <%= record.pips%>pipsの損失
+        <% else %>
+          損益判定なし
+        <% end %>
+      </p>
+      <p class="created_by">
+        by <%= link_to record.user.name, "/users/#{record.user_id}", {class: "link_to_user"} %>
+      </p>
+      </div>
+    <% end %>
+  </div>
+  <h3><%= @name %>さんの取引手法</h3>
+  <div class="grid_">
+    <% @rules.each do |rule| %>
+      <div class="rule">
+        <div class="rule_left">
+          <%= link_to image_tag(rule.image, class:"rule_img"), rule_path(rule.id) %> 
+        </div>
+        <div class="rule_right">
+          <p class="info">
+            <%= rule.name %> 
+          </p>
+          <p class="info">
+            推奨通貨ペア → <%= rule.pair.name %> ( <%= rule.ashi.name%> )
+          </p>
+          <p class="created_by">
+            by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
