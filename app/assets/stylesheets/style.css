@@ -469,9 +469,28 @@ table td{
 
 .pair_win_rate{
   display: flex;
+  overflow-x: auto;
 }
 
 .win_rate{
   width: 300px;
   margin: 12.5px;
+}
+
+.win_lose{
+  display: flex;
+}
+
+.blue{
+  height: 5px;
+  width: 40px;
+  background-color: #4474b3;
+  margin: auto 10px;
+}
+
+.red{
+  height: 5px;
+  width: 40px;
+  background-color: #ca4242;
+  margin: auto 10px;
 }
