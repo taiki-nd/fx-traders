@@ -465,7 +465,7 @@ table td{
   padding: 10px 0;
 }
 
-/* グラフ ---------------------------------------------------------------------*/
+/* ユーザー詳細 -------------------------------------------------------------------*/
 
 .pair_win_rate{
   display: flex;
@@ -493,4 +493,8 @@ table td{
   width: 40px;
   background-color: #ca4242;
   margin: auto 10px;
+}
+
+.profit_factor{
+  text-align: center;
 }

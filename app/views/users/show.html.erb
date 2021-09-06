@@ -10,8 +10,8 @@
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
   </div>
   <%= pie_chart @records_by_user.group(:issue_id).count, donut: true, legend: false %>
-  <p class="profit_factor">PF　:　<%= @all_pf %></p>
-  <h4>通貨ペア別勝率/RR</h4>
+  <p class="profit_factor">PF　:　<%= @all_pf.round(2) %></p>
+  <h4>通貨ペア別勝率/PF</h4>
   <div class="win_lose">
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
   </div>
@@ -21,7 +21,10 @@
       <% pair_rate = Record.where(pair_id: pair_cat) %>
       <%= Pair.find(pair_cat).name %>の勝率
       <%= pie_chart pair_rate.group(:issue_id).count, donut: true, legend: false %>
-      
+      <% pair_pips = pair_rate.where('pips not like?', '-%').pluck(:pips) %>
+      <% pair_pips_ = pair_rate.where('pips like?', '-%').pluck(:pips) %>
+      <% @pair_pf = pair_pips.sum/pair_pips_.sum.abs %>
+      <p class="profit_factor">PF　:　<%= @pair_pf.round(2) %></p>
     </div>
   <% end %>
   </div>
