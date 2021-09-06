@@ -2,28 +2,11 @@
   <h2 >みんなの取引記録</h2>
   <div class="grid">
     <% @records.each do |record| %>
-      <div class="record">
-      <% if record.image.attached? %>
-        <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
-      <% else %>
-        <%= link_to image_tag("sample.jpg", class:"recorded_img"), record_path(record.id) %>
-      <% end %>
-      <p class="info">
-        <%= record.pair.name %>の取引 →
-        <% if record.issue.id == 2 %>
-          <b><%= record.pips%>pips獲得！</b>
-        <% elsif record.issue.id == 3 %>
-          <%= record.pips%>pipsの損失
-        <% else %>
-          損益判定なし
-        <% end %>
-      </p>
-      <p class="created_by">
-        by <%= link_to record.user.name, '#', {class: "link_to_user"} %>
-      </p>
-      </div>
+      <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
-  <%= paginate @records %>
+  <div class="pagi">
+    <%= paginate @records %>
+  </div>
 </section>
 

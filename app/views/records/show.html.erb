@@ -62,7 +62,7 @@
         </tr>
         <tr>
           <th>created by</th>
-          <td><%= link_to @record.user.name, '#' %></td>
+          <td><%= link_to @record.user.name, "/users/#{@record.user_id}" %></td>
         </tr>
       </table>
     </div>

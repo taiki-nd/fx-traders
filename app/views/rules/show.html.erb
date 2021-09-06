@@ -34,7 +34,7 @@
         <% end %>
         <tr>
           <th>created by</th>
-          <td><%= link_to @rule.user.name, '#' %></td>
+          <td><%= link_to @rule.user.name, "/users/#{@rule.user_id}" %></td>
         </tr>
       </table>
     </div>

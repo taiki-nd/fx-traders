@@ -1,0 +1,16 @@
+<div class="rule">
+  <div class="rule_left">
+    <%= link_to image_tag(rule.image, class:"rule_img"), rule_path(rule.id) %> 
+  </div>
+  <div class="rule_right">
+    <p class="info">
+      <%= rule.name %> 
+    </p>
+    <p class="info">
+      推奨通貨ペア → <%= rule.pair.name %> ( <%= rule.ashi.name%> )
+    </p>
+    <p class="created_by">
+      by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
+    </p>
+  </div>
+</div>

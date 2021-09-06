@@ -19,7 +19,7 @@
       
       <% if user_signed_in? %>
         <div class="current_user">
-          user :   <%= link_to current_user.name, "#", class: 'user_name' %>
+          user :   <%= link_to current_user.name, "/users/#{current_user.id}", class: 'user_name' %>
         </div>
       <% else %>
         <div class="current_user">
@@ -36,7 +36,7 @@
         <ul class="navi_log">
           <% if user_signed_in? %>
             <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-            <li class="navi"><%= link_to 'マイページ', "#" %></li>
+            <li class="navi"><%= link_to 'マイページ', "/users/#{current_user.id}" %></li>
             <li class="navi"><%= link_to 'create record', new_record_path %></a></li>
             <li class="navi"><%= link_to 'crerte method', new_rule_path %></a></li>
           <% else %>
