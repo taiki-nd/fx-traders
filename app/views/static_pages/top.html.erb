@@ -1,2 +1,18 @@
-<h1>StaticPages#top</h1>
-<p>Find me in app/views/static_pages/top.html.erb</p>
+<section class="content">
+  <h2>取引記録のノートを作ろう！</h2>
+  <%= image_tag 'trading_note.jpg', class: "top_img" %>
+  <h2>みんなの取引記録をみてみよう！</h2>
+    <div class="grid">
+    <% @records.each do |record| %>
+      <%= render partial: "shared/records", locals: { record: record } %>
+    <% end %>
+  </div>
+  <%= link_to "もっと取引記録をみる", records_path, class: "btn_" %>
+  <h2>みんなの取引手法をみてみよう！</h2>
+  <div class="grid_">
+    <% @rules.each do |rule| %>
+      <%= render partial: "shared/rules", locals: { rule: rule } %>
+    <% end %>
+  </div>
+  <%= link_to "もっと取引手法をみる", records_path, class: "btn_" %>
+</section>
