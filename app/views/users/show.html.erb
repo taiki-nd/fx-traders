@@ -2,7 +2,10 @@
   <h2><%= @name %>さんのページ</h2>
   <h3><%= @name %>さんの取引分析</h3>
   <h4>獲得pips数</h4>
+  <b>全体</b>
   <%= column_chart @records_by_user.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
+  <b>直近1ヶ月</b>
+  <%= column_chart @records_by_user_month.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
   <div>
   </div>
   <h4>全体勝率</h4>
@@ -12,6 +15,7 @@
   <%= pie_chart @records_by_user.group(:issue_id).count, donut: true, legend: false %>
   <p class="profit_factor">PF　:　<%= @all_pf.round(2) %></p>
   <h4>通貨ペア別勝率/PF</h4>
+  <b>全体</b>
   <div class="win_lose">
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
   </div>
@@ -23,6 +27,23 @@
       <%= pie_chart pair_rate.group(:issue_id).count, donut: true, legend: false %>
       <% pair_pips = pair_rate.where('pips not like?', '-%').pluck(:pips) %>
       <% pair_pips_ = pair_rate.where('pips like?', '-%').pluck(:pips) %>
+      <% @pair_pf = pair_pips.sum/pair_pips_.sum.abs %>
+      <p class="profit_factor">PF　:　<%= @pair_pf.round(2) %></p>
+    </div>
+  <% end %>
+  </div>
+   <b>直近1ヶ月</b>
+  <div class="win_lose">
+    <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
+  </div>
+  <div class="pair_win_rate">
+  <% @pair_cat_month.each do |pair_cat| %>
+    <div class="win_rate">
+      <% pair_rate = Record.where(pair_id: pair_cat) %>
+      <%= Pair.find(pair_cat).name %>の勝率
+      <%= pie_chart pair_rate.group(:issue_id).count, donut: true, legend: false %>
+      <% pair_pips = pair_rate.where(created_at: @from...@to).where('pips not like?', '-%').pluck(:pips) %>
+      <% pair_pips_ = pair_rate.where(created_at: @from...@to).where('pips like?', '-%').pluck(:pips) %>
       <% @pair_pf = pair_pips.sum/pair_pips_.sum.abs %>
       <p class="profit_factor">PF　:　<%= @pair_pf.round(2) %></p>
     </div>
