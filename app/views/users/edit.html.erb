@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="container_sign">
+    <h2>登録情報の変更</h2>
+    
+    <%= form_with model: current_user, local: true do |f|%>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :name %> <br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

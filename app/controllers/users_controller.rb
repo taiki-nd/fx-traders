@@ -1,5 +1,16 @@
 class UsersController < ApplicationController
 
+  def edit
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
   def show
     @user = User.find(params[:id])
     @name = @user.name
