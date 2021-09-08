@@ -1,5 +1,5 @@
 <section class="content">
-  <h2 >みんなの取引記録</h2>
+  <h2 >以下の条件での検索結果</h2>
   <% if @results.length != 0 %>
     <div class="container">
       <%= search_form_for @q, url: search_records_path do |f| %>
@@ -20,5 +20,6 @@
     </div>
   <% else %>
     該当する記録はありません
+    ＜<%= link_to "一覧に戻る", records_path %>＞
   <% end %>
 </section>
