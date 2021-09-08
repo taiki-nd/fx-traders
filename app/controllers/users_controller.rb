@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     @all_pips_ = Record.where('pips like?', '-%').pluck(:pips)
     @all_pf = @all_pips.sum/@all_pips_.sum.abs
     #直近1ヶ月
-    @from = Time.current.at_beginning_of_day
-    @to = (@from + 1.month)
+    @to = Date.current.at_end_of_day
+    @from = @to - 1.month
     @records_by_user_month = Record.where(user_id: @user.id).where(created_at: @from...@to)
     @pair_cat_month = @records_by_user_month.group(:pair_id).pluck(:pair_id)
   end
