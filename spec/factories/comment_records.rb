@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :comment do
+  factory :comment_record do
     
   end
 end
