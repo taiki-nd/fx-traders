@@ -45,7 +45,7 @@ class RecordsController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @q.result.order("created_at DESC").page(params[:page]).per(20)
   end
 
   private
