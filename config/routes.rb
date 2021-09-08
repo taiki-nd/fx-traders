@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :records do
     resources :comment_records
   end
-  resources :rules
+  resources :rules do
+    resources :comment_rules
+  end
   resources :users, only: [:edit, :update, :show]
 end
