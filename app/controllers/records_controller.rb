@@ -34,7 +34,8 @@ class RecordsController < ApplicationController
   end
 
   def show
-    
+    @comment_record = CommentRecord.new
+    @comment_records = @record.comment_records
   end
 
   def destroy

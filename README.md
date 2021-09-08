@@ -80,7 +80,7 @@ fx-traders
 ### association
 
 * belongs_to :user
-* has_many :comments
+* has_many :comment_records
 
 ## rule テーブル
 
@@ -100,18 +100,29 @@ fx-traders
 ### association
 
 * belongs_to :user
-* has_many :comments
+* has_many :comment_rules
 
-## comment テーブル
+## comment_record テーブル
 
-| Column | Type | Options     |
-| ------ | ---- | ----------- |
-| text   | text | null: false |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| record | references | null: false, foreign_key: true |
 
 ### Association
 
 * belongs_to :record
-* belongs_to :method
+
+## comment_rule テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| record | references | null: false, foreign_key: true |
+
+### Association
+
+* belongs_to :rule
 
 ## follow テーブル
 

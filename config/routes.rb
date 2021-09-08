@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'static_pages#top'
   get "about",to: 'static_pages#about'
-  resources :records
-  resources :rules
+  resources :records do
+    resources :comment_records
+  end
+  resources :rules do
+    resources :comment_rules
+  end
   resources :users, only: [:edit, :update, :show]
 end
