@@ -1,4 +1,4 @@
 class CommentRule < ApplicationRecord
-  validates :text
+  validates :text, presence: true
   belongs_to :rule
 end
