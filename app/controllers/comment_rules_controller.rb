@@ -8,6 +8,6 @@ class CommentRulesController < ApplicationController
   private
 
   def comment_rule_params
-    require(:comment_rules).permit(:text).merge(rule_id: params[:rule_id])
+    params.require(:comment_rule).permit(:text).merge(rule_id: params[:rule_id])
   end
 end
