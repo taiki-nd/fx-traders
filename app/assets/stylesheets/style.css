@@ -60,6 +60,7 @@ h2 {
 }
 
 h3 {
+  width: 95%;
   position: relative;
   padding: 1rem .5rem;
 }
