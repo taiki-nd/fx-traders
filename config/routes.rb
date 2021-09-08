@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "about",to: 'static_pages#about'
   resources :records
   resources :rules
-  resources :users, only: [:show]
+  resources :users, only: :show
 end

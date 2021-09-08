@@ -17,4 +17,10 @@ class UsersController < ApplicationController
     @pair_cat_month = @records_by_user_month.group(:pair_id).pluck(:pair_id)
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+
 end
