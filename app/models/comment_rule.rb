@@ -1,0 +1,2 @@
+class CommentRule < ApplicationRecord
+end
