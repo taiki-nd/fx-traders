@@ -72,5 +72,13 @@
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
       <%= form.submit "SEND" %>
     <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comment_rules.each do |comment| %>
+        <p>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
   </div>
 </section>

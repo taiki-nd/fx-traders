@@ -40,6 +40,7 @@ class RulesController < ApplicationController
 
   def show
     @comment_rules = CommentRule.new
+    @comment_rules = @rule.comment_rules
   end
 
   private
