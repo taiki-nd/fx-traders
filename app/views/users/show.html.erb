@@ -70,7 +70,7 @@
   <% if user_signed_in? && current_user.id == @user.id %>
     <h3><%= @name %>さんの専用エリア</h3>
     <div class="btn btn--white btn--radius">
-      <%= link_to '編集', '#', class: 'btn_word' %>
+      <%= link_to '編集', edit_user_registration_path(current_user.id), class: 'btn_word' %>
     </div>
   <% end %>
 </section>
