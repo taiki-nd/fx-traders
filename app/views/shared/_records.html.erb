@@ -14,6 +14,9 @@
       損益判定なし
     <% end %>
   </p>
+  <div id="likes_buttons_<%= record.id %>">
+    <%= render partial: 'like_records/like', locals: { record: record } %>
+  </div>
   <p class="created_by">
     by <%= link_to record.user.name, "/users/#{record.user_id}", {class: "link_to_user"} %>
   </p>
