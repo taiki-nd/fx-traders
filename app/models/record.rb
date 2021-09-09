@@ -19,6 +19,7 @@ class Record < ApplicationRecord
   belongs_to :user
   has_many :comment_records
   has_one_attached :image 
+  has_many :like_records
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :ashi

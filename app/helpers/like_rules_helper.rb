@@ -1,0 +1,2 @@
+module LikeRulesHelper
+end

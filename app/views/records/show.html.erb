@@ -90,6 +90,25 @@
   <% end %>
   <h3>コメント</h3>
   <div class="container">
+    <div id="likes_buttons_<%= @record.id %>">
+      <% if user_signed_in? %>
+        <% if current_user.liked_by?(@record.id) %>
+          <td>
+            <%= link_to destroy_like_record_path(@record), method: :DELETE, remote: true do %>
+              <i class="fas fa-thumbs-up unlike-btn"></i>
+            <% end %>
+            <%= @record.like_records.count %>
+          </td>
+        <% else %>
+          <td class="like_body">
+            <%= link_to create_like_record_path(@record), method: :POST, remote: true do %>
+              <i class="fas fa-thumbs-up like-btn"></i>
+            <% end %>
+            <%= @record.like_records.count %>
+          </td>
+        <% end %>
+      <% end %>
+    </div>
     <%= form_with(model: [@record, @comment_record], local: true) do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
       <%= form.submit "SEND" %>

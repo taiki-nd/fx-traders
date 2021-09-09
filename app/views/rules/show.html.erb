@@ -68,6 +68,25 @@
   <% end %>
   <h3>コメント</h3>
   <div class="container">
+    <div id="likes_buttons_<%= @rule.id %>">
+      <% if user_signed_in? %>
+        <% if current_user.liked__by?(@rule.id) %>
+          <td>
+            <%= link_to destroy_like_rule_path(@rule), method: :DELETE, remote: true do %>
+              <i class="fas fa-thumbs-up unlike-btn"></i>
+            <% end %>
+            <%= @rule.like_rules.count %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to create_like_rule_path(@rule), method: :POST, remote: true do %>
+              <i class="fas fa-thumbs-up like-btn"></i>
+            <% end %>
+            <%= @rule.like_rules.count %>
+          </td>
+        <% end %>
+      <% end %>
+    </div>
     <%= form_with(model: [@rule, @comment_rule], local: true) do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
       <%= form.submit "SEND" %>
