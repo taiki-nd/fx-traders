@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+ <% if current_user.liked__by?(rule.id) %>
+   <td><%= link_to 'いいねを外す', destroy_like_rule_path(rule), method: :DELETE, remote: true %> <%= rule.like_rules.count %></td>
+ <% else %>
+   <td><%= link_to 'いいね', create_like_rule_path(rule), method: :POST, remote: true %> <%= rule.like_rules.count %></td>
+ <% end %>
+<% end %>
