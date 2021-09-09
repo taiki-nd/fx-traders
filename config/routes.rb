@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   post 'like_record/:id' => 'like_records#create', as: 'create_like_record'
   delete 'like_record/:id' => 'like_records#destroy', as: 'destroy_like_record'
   post 'like_rule/:id' => 'like_rules#create', as: 'create_like_rule'
-  delete 'like_rule/:id' => 'like_rules#destroy', as: 'destroy_like_rile'
-end
+  delete 'like_rule/:id' => 'like_rules#destroy', as: 'destroy_like_rule'
 end

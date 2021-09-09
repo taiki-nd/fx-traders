@@ -1,6 +1,6 @@
 class LikeRule < ApplicationRecord
 
   belongs_to :user
-  belongs_to :rules
-  
+  belongs_to :rule
+
 end
