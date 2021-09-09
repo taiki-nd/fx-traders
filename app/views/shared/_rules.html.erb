@@ -9,11 +9,13 @@
     <p class="info">
       推奨通貨ペア → <%= rule.pair.name %> ( <%= rule.ashi.name%> )
     </p>
-    <div id="likes_buttons_<%= rule.id %>">
-      <%= render partial: 'like_rules/like', locals: {rule: rule} %>
+    <div class="record_small_info">
+      <div id="likes_buttons_<%= rule.id %>">
+        <%= render partial: 'like_rules/like', locals: {rule: rule} %>
+      </div>
+      <p class="created_by">
+        by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
+      </p>
     </div>
-    <p class="created_by">
-      by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
-    </p>
   </div>
 </div>
