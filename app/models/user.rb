@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   has_many :records
   has_many :rules
+  has_many :like_records
 end
