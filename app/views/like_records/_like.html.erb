@@ -7,7 +7,7 @@
       <%= record.like_records.count %>
     </td>
   <% else %>
-    <td>
+    <td class="like_body">
       <%= link_to create_like_record_path(record), method: :POST, remote: true do %>
         <i class="fas fa-thumbs-up like-btn"></i>
       <% end %>

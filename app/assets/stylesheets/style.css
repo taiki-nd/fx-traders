@@ -373,6 +373,12 @@ form input[type="submit"]:hover {
   padding: 0;
 }
 
+.record_small_info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .created_by{
   text-align: right;
   margin-right: 10px;
@@ -517,13 +523,16 @@ table td{
   text-align: center;
 }
 
+/* いいね関連 -------------------------------------------------------------------*/
 
 .like-btn {
   font-size: 15px;
   color: #656869;
+  margin-left: 10px;
  }
  
  .unlike-btn {
   font-size: 15px;
   color: #ca4242;
+  margin-left: 10px;
  }
