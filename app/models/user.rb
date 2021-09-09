@@ -18,4 +18,8 @@ class User < ApplicationRecord
     like_records.where(record_id: record_id).exists?
   end
 
+  def liked__by?(rule_id)
+    like_rules.where(rule_id: rule_id).exists?
+  end
+
 end
