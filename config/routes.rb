@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:edit, :update, :show]
+
+  post 'like_record/:id' => 'like_records#create', as: 'create_like_record'
+  delete 'like_Record/:id' => 'like_records#destroy', as: 'destroy_like_record'
 end

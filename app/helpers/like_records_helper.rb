@@ -1,0 +1,2 @@
+module LikeRecordsHelper
+end
