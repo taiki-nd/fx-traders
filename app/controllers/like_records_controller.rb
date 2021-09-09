@@ -1,13 +1,13 @@
 class LikeRecordsController < ApplicationController
 
-  before_action :post_params
+  before_action :record_params
 
   def create
-    Like.create(user_id: current_user.id, record_id: params[:id])
+    LikeRecord.create(user_id: current_user.id, record_id: params[:id])
   end
 
   def destroy
-    Like.find_by(user_id: current_user.id, record_id: params[:id]).destroy
+    LikeRecord.find_by(user_id: current_user.id, record_id: params[:id]).destroy
   end
 
   private
