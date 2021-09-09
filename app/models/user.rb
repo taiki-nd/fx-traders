@@ -12,4 +12,9 @@ class User < ApplicationRecord
   has_many :records
   has_many :rules
   has_many :like_records
+
+  def liked_by?(record_id)
+    likes.where(record_id: record_id).exists?
+  end
+
 end
