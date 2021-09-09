@@ -516,3 +516,14 @@ table td{
 .profit_factor{
   text-align: center;
 }
+
+
+.like-btn {
+  font-size: 15px;
+  color: #656869;
+ }
+ 
+ .unlike-btn {
+  font-size: 15px;
+  color: #ca4242;
+ }

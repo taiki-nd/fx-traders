@@ -1,7 +1,17 @@
 <% if user_signed_in? %>
   <% if current_user.liked_by?(record.id) %>
-    <td><%= link_to 'いいねを外す', destroy_like_record_path(record), method: :DELETE, remote: true %> <%= record.like_records.count %></td>
+    <td>
+      <%= link_to destroy_like_record_path(record), method: :DELETE, remote: true do %>
+        <i class="fas fa-thumbs-up unlike-btn"></i>
+      <% end %>
+      <%= record.like_records.count %>
+    </td>
   <% else %>
-    <td><%= link_to 'いいね', create_like_record_path(record), method: :POST, remote: true %> <%= record.like_records.count %></td>
+    <td>
+      <%= link_to create_like_record_path(record), method: :POST, remote: true do %>
+        <i class="fas fa-thumbs-up like-btn"></i>
+      <% end %>
+      <%= record.like_records.count %>
+    </td>
   <% end %>
 <% end %>
