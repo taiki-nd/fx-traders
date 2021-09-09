@@ -1,1 +1,1 @@
-alert('いいねを解除している');
+$('#likes_buttons_<%= @rule.id %>').html("<%= j(render partial: 'like_rules/like', locals: {rule: @rule}) %>");
