@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   get "about",to: 'static_pages#about'
   resources :records do
     resources :comment_records
+    collection do
+      get 'search'
+    end
   end
   resources :rules do
     resources :comment_rules
+    collection do
+      get 'search'
+    end
   end
   resources :users, only: [:edit, :update, :show]
 end

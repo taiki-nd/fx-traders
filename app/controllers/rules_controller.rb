@@ -3,6 +3,7 @@ class RulesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_rule, only: [:edit, :update, :show, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -43,6 +44,10 @@ class RulesController < ApplicationController
     @comment_rules = @rule.comment_rules
   end
 
+  def search
+    @results = @q.result.order("created_at DESC").page(params[:page]).per(20)
+  end
+
   private
 
   def rule_params
@@ -57,6 +62,10 @@ class RulesController < ApplicationController
     unless user_signed_in? && current_user.id == @rule.user_id
       redirect_to action: :index
     end
+  end
+
+  def set_q
+    @q = Rule.ransack(params[:q])
   end
 
 end
