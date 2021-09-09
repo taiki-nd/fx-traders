@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_030031) do
+ActiveRecord::Schema.define(version: 2021_09_09_130328) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2021_09_09_030031) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_id"], name: "index_like_records_on_record_id"
     t.index ["user_id"], name: "index_like_records_on_user_id"
+  end
+
+  create_table "like_rules", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "rule_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rule_id"], name: "index_like_rules_on_rule_id"
+    t.index ["user_id"], name: "index_like_rules_on_user_id"
   end
 
   create_table "records", charset: "utf8", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class LikeRule < ApplicationRecord
+end
