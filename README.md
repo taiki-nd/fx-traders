@@ -57,6 +57,8 @@ fx-traders
 * has_many :records
 * has_many :rules
 * has_many :relationships
+* has_many :like_records
+* has_many :like_rules
 * has_many :followings, through: :relationships, source: :follow
 * has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
 * has_many :followers, through: :reverse_of_relationships, source: :user
@@ -123,6 +125,30 @@ fx-traders
 ### Association
 
 * belongs_to :rule
+
+## like_record テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| record_id | references | null: false, foreign_key: true |
+| user_id   | references | null: false, foreign_key: true |
+
+### Association
+
+* belongs_to :record
+* belongs_to :user
+
+## like_rule テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| rule_id   | references | null: false, foreign_key: true |
+| user_id   | references | null: false, foreign_key: true |
+
+### Association
+
+* belongs_to :rule
+* belongs_to :user
 
 ## follow テーブル
 
