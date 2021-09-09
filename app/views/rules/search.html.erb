@@ -1,0 +1,24 @@
+<section class="content">
+  <h2 >以下の条件での検索結果</h2>
+  <% if @results.length != 0 %>
+    <div class="container">
+      <%= search_form_for @q, url: search_rules_path do |f| %>
+        <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '推奨通貨ペアで検索' %>
+        <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '推奨時間足で検索' %>
+        <%= f.collection_select :issue_id_eq,Issue.all,:id,:name,include_blank: '勝てるか負けるかで検索' %>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
+    <div class="grid_">
+      <% @results.each do |rule| %>
+        <%= render partial: "shared/rules", locals: { rule: rule } %>
+      <% end %>
+    </div>
+    <div class="pagi">
+      <%= paginate @results %>
+    </div>
+  <% else %>
+    該当する記録はありません
+    ＜<%= link_to "一覧に戻る", rules_path %>＞
+  <% end %>
+</section>

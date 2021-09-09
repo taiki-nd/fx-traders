@@ -6,9 +6,10 @@
       <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '時間足で検索' %>
       <%= f.collection_select :issue_id_eq,Issue.all,:id,:name,include_blank: '勝敗で検索' %>
       <%= f.collection_select :lose_reason_id_eq,LoseReason.all,:id,:name,include_blank: '理由で検索' %>
-    <%= f.submit '検索' %>
+      <%= f.submit '検索' %>
+    <% end %>
   </div>
-<% end %>
+
   <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>

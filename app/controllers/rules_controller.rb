@@ -65,7 +65,7 @@ class RulesController < ApplicationController
   end
 
   def set_q
-    @q = Record.ransack(params[:q])
+    @q = Rule.ransack(params[:q])
   end
 
 end
