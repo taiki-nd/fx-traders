@@ -1,5 +1,6 @@
 <section class="content">
   <h2><%= @name %>さんのページ</h2>
+  <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
   <h3><%= @name %>さんの取引分析</h3>
   <h4>獲得pips数</h4>
   <b>全体</b>
