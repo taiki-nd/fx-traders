@@ -2,11 +2,11 @@
   <h2><%= @name %>さんのページ</h2>
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
   <div class="follow_reration">
-    <div class="follow_btn1">
-      <p>フォロー : <a href="<%= @user.id %>/followings"><%= @user.followings.count %></a></p>
+    <div class="btn">
+      <p>フォロー : <%= link_to @user.followings.count, "/users/#{ @user.id }/followings" %>
     </div>
-    <div class="follow_btn2">
-      <p>フォロワー : <a href="<%= @user.id %>/followers"><%= @user.followers.count %></a></p>
+    <div class="btn">
+      <p>フォロワー : <%= link_to @user.followers.count, "/users/#{ @user.id }/followers" %>
     </div>
   </div>
   <h3><%= @name %>さんの取引分析</h3>
