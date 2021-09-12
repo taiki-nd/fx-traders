@@ -1,0 +1,12 @@
+<div class="content">
+  <h3>フォロー</h3>
+  <% if @users.exists? %>
+    <% @users.each do |user| %>
+      <div class="follow_members">
+        ・<%= link_to user.name, user_path(user) %>　フォロー数:<%= user.followings.count %>　/　フォロワー数: <%= user.followers.count %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
+</div>
