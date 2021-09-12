@@ -4,7 +4,10 @@
   <div class="follow_reration">
     <div class="follow_btn1">
       <p>フォロー : <a href="<%= @user.id %>/followings"><%= @user.followings.count %></a></p>
-    </div>  
+    </div>
+    <div class="follow_btn2">
+      <p>フォロワー : <a href="<%= @user.id %>/followers"><%= @user.followers.count %></a></p>
+    </div>
   </div>
   <h3><%= @name %>さんの取引分析</h3>
   <h4>獲得pips数</h4>

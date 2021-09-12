@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :show] do
     get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers' 
   end
 
   post 'like_record/:id' => 'like_records#create', as: 'create_like_record'
