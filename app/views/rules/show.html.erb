@@ -96,9 +96,14 @@
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% @comment_rules.each do |comment| %>
-        <p>
-          <%= comment.text %>
-        </p>
+        <div class="comment_area">
+          <div>
+            <%= comment.text %>
+          </div>
+          <div>
+            <%= link_to '削除', rule_comment_rule_path(@rule, comment), method: :delete, class: "link_to_user" %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

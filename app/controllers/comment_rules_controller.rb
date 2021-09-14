@@ -5,6 +5,13 @@ class CommentRulesController < ApplicationController
     redirect_to "/rules/#{@comment_rule.rule.id}"
   end
 
+  def destroy
+    @rule = Rule.find(params[:rule_id])
+    comment = @rule.comment_rules.find(params[:id])
+    comment.destroy 
+    redirect_to "/rules/#{comment.rule.id}"
+  end
+
   private
 
   def comment_rule_params
