@@ -51,7 +51,7 @@ class RulesController < ApplicationController
   private
 
   def rule_params
-    params.require(:rule).permit(:name, :ashi_id, :pair_id, :entry, :exit, :issue_id, :overview, :overview_content, :summary, :image).merge(user_id: current_user.id)
+    params.require(:rule).permit(:name, :ashi_id, :kind_id, :pair_id, :entry, :exit, :issue_id, :overview, :overview_content, :summary, :image).merge(user_id: current_user.id)
   end
 
   def set_rule

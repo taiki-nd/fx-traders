@@ -16,6 +16,10 @@
           <th>推奨時間足</th>
           <td><%= @rule.ashi.name %> </td>
         </tr>
+        <tr>
+          <th>推奨トレード種別</th>
+          <td><%= @rule.kind.name %> </td>
+        </tr>
         <% if @rule.issue.id == 2 %>
           <tr>
             <th>勝てる？負ける？</th>

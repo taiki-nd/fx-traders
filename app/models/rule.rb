@@ -4,6 +4,7 @@ class Rule < ApplicationRecord
     validates :image
     validates :name
     validates :ashi_id
+    validates :kind_id
     validates :pair_id
     validates :issue_id
     validates :overview
@@ -17,6 +18,7 @@ class Rule < ApplicationRecord
     validates :ashi_id
     validates :pair_id
     validates :issue_id
+    validates :kind_id
   end
 
   belongs_to :user
@@ -28,5 +30,6 @@ class Rule < ApplicationRecord
   belongs_to :ashi
   belongs_to :pair
   belongs_to :issue
+  belongs_to :kind
 
 end
