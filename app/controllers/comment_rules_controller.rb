@@ -1,15 +1,18 @@
 class CommentRulesController < ApplicationController
 
   def create
-    @comment_rule = CommentRule.create(comment_rule_params)
-    redirect_to "/rules/#{@comment_rule.rule.id}"
+    @rule = Rule.find(params[:rule_id])
+    @comment_rules = @rule.comment_rules.build(comment_rule_params)
+    if @comment_rules.save
+      render :index
+    end
   end
 
   def destroy
     @rule = Rule.find(params[:rule_id])
-    comment = @rule.comment_rules.find(params[:id])
-    comment.destroy 
-    redirect_to "/rules/#{comment.rule.id}"
+    @comment = @rule.comment_rules.find(params[:id])
+    @comment.destroy
+    render :destroy
   end
 
   private

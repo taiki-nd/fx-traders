@@ -1,15 +1,18 @@
 class CommentRecordsController < ApplicationController
 
   def create
-    @comment_record = CommentRecord.create(comment_record_params)
-    redirect_to "/records/#{@comment_record.record.id}"
+    @record = Record.find(params[:record_id])
+    @comment_records = @record.comment_records.build(comment_record_params)
+    if @comment_records.save
+      render :index
+    end
   end
 
   def destroy
     @record = Record.find(params[:record_id])
-    comment = @record.comment_records.find(params[:id])
-    comment.destroy 
-    redirect_to "/records/#{comment.record.id}"
+    @comment = @record.comment_records.find(params[:id])
+    @comment.destroy
+    render :destroy
   end
 
   private
