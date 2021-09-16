@@ -1,0 +1,10 @@
+<% comments.each do |comment| %>
+  <div class="comment_area" id="comment__<%= comment.id %>">
+    <div>
+      <%= comment.text %>
+    </div>
+    <div>
+      <%= link_to '削除', record_comment_record_path(@record, comment), method: :delete, class: "link_to_user" %>
+    </div>
+  </div>
+<% end %>
