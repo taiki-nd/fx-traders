@@ -10,5 +10,6 @@ class Kind < ActiveHash::Base
  
    include ActiveHash::Associations
    has_many :rules
+   has_many :records
  
 end

@@ -8,6 +8,8 @@
   <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"})%>
   <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
+  <p class="explain">トレード種別の選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
   <p class="explain">エントリー価格を入力してください</p>
   <%= form.text_field :entry_rate, placeholder: "エントリー価格" %>
   <p class="explain">イグジット価格を入力してください</p>

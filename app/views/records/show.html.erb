@@ -28,6 +28,10 @@
           <th>時間足</th>
           <td><%= @record.ashi.name %> </td>
         </tr>
+        <tr>
+          <th>トレード種別</th>
+          <td><%= @record.kind.name %> </td>
+        </tr>
         <% if @record.entry_rate != nil %>
           <tr>
             <th>エントリー価格</th>
