@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  has_many :records
-  has_many :rules
+  has_many :records, dependent: :destroy
+  has_many :rules, dependent: :destroy
   has_many :like_records
   has_many :like_rules
 
@@ -22,7 +22,7 @@ class User < ApplicationRecord
     like_rules.where(rule_id: rule_id).exists?
   end
 
-  has_many :relationships
+  has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user

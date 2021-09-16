@@ -21,8 +21,8 @@ class Rule < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image 
-  has_many :comment_rules
-  has_many :like_rules
+  has_many :comment_rules, dependent: :destroy
+  has_many :like_rules, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :ashi

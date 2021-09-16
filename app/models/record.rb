@@ -17,9 +17,9 @@ class Record < ApplicationRecord
   end
 
   belongs_to :user
-  has_many :comment_records
+  has_many :comment_records, dependent: :destroy
   has_one_attached :image 
-  has_many :like_records
+  has_many :like_records, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :ashi
