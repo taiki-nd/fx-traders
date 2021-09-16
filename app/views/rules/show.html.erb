@@ -25,15 +25,10 @@
             <th>勝てる？負ける？</th>
             <td>勝てる</td>
           </tr>
-        <% elsif @rule.issue.id == 3 %>
+        <% else @rule.issue.id == 3 %>
           <tr>
             <th>勝てる？負ける？</th>
             <td>負ける</td>
-          </tr>
-        <% else %>
-          <tr>
-            <th>勝てる？負ける？</th>
-            <td>微妙なところ</td>
           </tr>
         <% end %>
         <tr>
