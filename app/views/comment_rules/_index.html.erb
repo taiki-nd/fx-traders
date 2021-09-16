@@ -1,7 +1,8 @@
 <% comments.each do |comment| %>
   <div class="comment_area" id="comment_<%= comment.id %>">
     <div>
-      <%= comment.text %>
+      <p><%= comment.text %></p>
+      <p class="created_by"><%= l comment.created_at %></p>
     </div>
     <div>
       <%= link_to '削除', rule_comment_rule_path(@rule, comment), method: :delete, remote: true, class: "link_to_user" %>
