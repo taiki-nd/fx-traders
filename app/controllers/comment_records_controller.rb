@@ -10,9 +10,9 @@ class CommentRecordsController < ApplicationController
 
   def destroy
     @record = Record.find(params[:record_id])
-    comment = @record.comment_records.find(params[:id])
-    comment.destroy 
-    redirect_to "/records/#{comment.record.id}"
+    @comment = @record.comment_records.find(params[:id])
+    @comment.destroy
+    render :destroy
   end
 
   private

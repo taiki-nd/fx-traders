@@ -4,7 +4,7 @@
       <%= comment.text %>
     </div>
     <div>
-      <%= link_to '削除', record_comment_record_path(@record, comment), method: :delete, class: "link_to_user" %>
+      <%= link_to '削除', record_comment_record_path(@record, comment), method: :delete, remote: true, class: "link_to_user" %>
     </div>
   </div>
 <% end %>
