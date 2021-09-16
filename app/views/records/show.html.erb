@@ -1,8 +1,8 @@
 <section class="content">
   <% if @record.issue.id == 2 %>
-    <h2 ><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</h2>
+    <h2><span><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</span></h2>
   <% else @record.issue.id == 3 %>
-    <h2 ><%= @record.date %>の取引記録</h2>
+    <h2><span><%= @record.date %>の取引記録</span></h2>
   <% end %>
   <div class="record_content">
     <div class="left_content">

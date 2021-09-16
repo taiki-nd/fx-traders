@@ -1,5 +1,5 @@
 <section class="content">
-  <h2 >みんなの取引記録</h2>
+  <h2><span>みんなの取引記録</span></h2>
   <div class="container">
     <%= search_form_for @q, url: search_records_path do |f| %>
       <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '通貨ペアで検索' %>
