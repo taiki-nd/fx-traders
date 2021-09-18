@@ -1,6 +1,6 @@
 <div class="content">
   <div class="container_sign">
-    <h2>Log in</h2>
+    <h2><span>Log in<span></h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
         <%= f.label :email %><br />
