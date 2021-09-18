@@ -567,3 +567,25 @@ table td{
   margin-left: 10px;
 }
 
+/* footer -------------------------------------------------------------------*/
+
+#footer{
+  width: 100%;
+  background-color: #cccccc;
+  color: #656869;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer_links{
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.7rem;
+}
+
+.footer_link_{
+  color: #656869;
+}

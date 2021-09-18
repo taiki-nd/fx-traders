@@ -46,9 +46,8 @@
           <% end %>
         </ul>
         <ul class="navi_pages">
-          <li class="navi"><a href="/pages/notice">運営からの知らせ</a></li>
           <li class="navi"><a href="/pages/contact">お問い合わせ</a></li>
-          <li class="navi"><a href="/pages/company">運営情報</a></li>
+          <li class="navi"><%= link_to '運営情報', about_path  %></li>
         </ul>
       </nav>
   
@@ -59,15 +58,23 @@
       </div>
   
       <div id="mask"></div>
-  　</header>
+  </header>
   
     <%= yield %>
     
   <footer id="footer">
-    <div class="content">
-      <div class="cantainer">
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <p class="copyright">Copyright fx-traders allright reserved</p>
+    <div class="cantainer">
+      <p class="copyright">Copyright fx-traders allright reserved</p>
+    </div>
+    <div class="footer_links">
+      <div class="footer_link">
+        <%= link_to '運営情報', about_path, class: "footer_link_" %>
+      </div>
+      <div class="footer_link">
+        <%= link_to 'プライバシーポリシー', privacy_policy_path, class: "footer_link_" %>
+      </div>
+      <div class="footer_link">
+        <%= link_to '運営情報', about_path, class: "footer_link_" %>
       </div>
     </div>
   </footer>  

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#top'
 
   get "about",to: 'static_pages#about'
+  get "privacy_policy",to: 'static_pages#privacy_policy'
 
   resources :records do
     resources :comment_records
