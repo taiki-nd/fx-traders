@@ -601,6 +601,6 @@ table td{
 .risk_warning{
   width: 90%;
   margin: 25px auto 25px;
-  padding: 5px;
+  padding: 0 10px;
   border: 1px solid #000000;
 }
