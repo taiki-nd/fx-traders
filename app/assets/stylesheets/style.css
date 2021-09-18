@@ -6,6 +6,10 @@ img{
   max-width: 100%;
 }
 
+.title_img{
+  height: 30px;
+}
+
 .recorded_img{
   width: 300px;
 }

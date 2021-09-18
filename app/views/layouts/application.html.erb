@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>FxTraders</title>
+     <%= favicon_link_tag('logo.png') %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +16,7 @@
     <header id="header">
       
       <div class="heading" id="heading_id">
-        <h1 class="title"><a href="/">FX traders</a></h1>
+        <a href="/"><%= image_tag 'fxtraders-logo', class: "title_img" %></a>
       </div>
       
       <% if user_signed_in? %>
