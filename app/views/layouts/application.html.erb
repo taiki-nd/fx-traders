@@ -47,7 +47,6 @@
         </ul>
         <ul class="navi_pages">
           <li class="navi"><a href="/pages/contact">お問い合わせ</a></li>
-          <li class="navi"><%= link_to '運営情報', about_path  %></li>
         </ul>
       </nav>
   
@@ -63,18 +62,22 @@
     <%= yield %>
     
   <footer id="footer">
-    <div id="space">
+    <div class="space">
     </div>
     <div class="footer_links">
-      <div class="footer_link">
-        <%= link_to '運営情報', about_path, class: "footer_link_" %>
-      </div>
       <div class="footer_link">
         <%= link_to 'プライバシーポリシー', privacy_policy_path, class: "footer_link_" %>
       </div>
       <div class="footer_link">
         <%= link_to '免責事項', disclaimer_path, class: "footer_link_" %>
       </div>
+    </div>
+    <div class="risk_warning">
+      <p class="footer_word">
+      FX-Tradersについて：<br>
+      FX-Tradersはfxの取引記録・取引手法などを記録・公開して分析することで、自分自身の取引を見つめ直すことができることを目的としサービス提供を開始いたしました。また、第三者の取引記録・分析結果を参考にすることができるため、投資家判断の参考となる情報共有も目的としています。<br>
+      今後も、ユーザー様のサポートのため新機能の追加などを行ってまいります。
+      </P>
     </div>
     <div class="risk_warning">
       <p class="footer_word">
@@ -85,7 +88,8 @@
     <div class="cantainer">
       <p class="copyright">Copyright fx-traders allright reserved</p>
     </div>
+    <div class="space">
+    </div>
   </footer>  
-  
   </body>
 </html>
