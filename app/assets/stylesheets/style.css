@@ -229,6 +229,12 @@ h4:before {
   margin-top: 100px;
 }
 
+.line-btn{
+  font-size: 1.5rem;
+  color: #3cdb64;
+  margin-left: 10px;
+}
+
 /*----------------------------------------*/
 
 .toggle_btn{
