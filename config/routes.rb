@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "about",to: 'static_pages#about'
   get "privacy_policy",to: 'static_pages#privacy_policy'
+  get "disclaimer",to: 'static_pages#disclaimer'
 
   resources :records do
     resources :comment_records
