@@ -10,6 +10,10 @@ img{
   width: 300px;
 }
 
+#space{
+  height: 25px;
+}
+
 .section{
   width: 95%;
   margin: 0 auto;
@@ -575,6 +579,10 @@ table td{
   color: #656869;
 }
 
+.footer_word{
+  font-size: 0.7rem;
+}
+
 .copyright{
   text-align: center;
   font-size: 0.9rem;
@@ -588,4 +596,11 @@ table td{
 
 .footer_link_{
   color: #656869;
+}
+
+.risk_warning{
+  width: 90%;
+  margin: 25px auto 25px;
+  padding: 5px;
+  border: 1px solid #000000;
 }
