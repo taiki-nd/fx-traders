@@ -1,5 +1,5 @@
 <section class="content">
-  <h2><%= @rule.name %></h2>
+  <h2><span><%= @rule.name %></span></h2>
   <div class="record_content">
     <div class="left_content">
       <h3>取引画像</h3>
@@ -16,20 +16,19 @@
           <th>推奨時間足</th>
           <td><%= @rule.ashi.name %> </td>
         </tr>
+        <tr>
+          <th>推奨トレード種別</th>
+          <td><%= @rule.kind.name %> </td>
+        </tr>
         <% if @rule.issue.id == 2 %>
           <tr>
             <th>勝てる？負ける？</th>
             <td>勝てる</td>
           </tr>
-        <% elsif @rule.issue.id == 3 %>
+        <% else @rule.issue.id == 3 %>
           <tr>
             <th>勝てる？負ける？</th>
             <td>負ける</td>
-          </tr>
-        <% else %>
-          <tr>
-            <th>勝てる？負ける？</th>
-            <td>微妙なところ</td>
           </tr>
         <% end %>
         <tr>
@@ -63,7 +62,7 @@
           <%= link_to '編集', edit_rule_path(@rule.id), class: 'btn_word' %>
         </div>
         <div class="btn btn--white btn--radius">
-        <%= link_to '削除', rule_path(@rule.id), method: :delete, class: 'btn_word'%>
+        <%= link_to '削除', rule_path(@rule.id), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn_word'%>
         </div>
       </div>
     </div>

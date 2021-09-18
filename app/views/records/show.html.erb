@@ -1,8 +1,8 @@
 <section class="content">
   <% if @record.issue.id == 2 %>
-    <h2 ><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</h2>
+    <h2><span><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</span></h2>
   <% else @record.issue.id == 3 %>
-    <h2 ><%= @record.date %>の取引記録</h2>
+    <h2><span><%= @record.date %>の取引記録</span></h2>
   <% end %>
   <div class="record_content">
     <div class="left_content">
@@ -27,6 +27,10 @@
         <tr>
           <th>時間足</th>
           <td><%= @record.ashi.name %> </td>
+        </tr>
+        <tr>
+          <th>トレード種別</th>
+          <td><%= @record.kind.name %> </td>
         </tr>
         <% if @record.entry_rate != nil %>
           <tr>
@@ -83,7 +87,7 @@
           <%= link_to '編集', edit_record_path(@record.id), class: 'btn_word' %>
         </div>
         <div class="btn btn--white btn--radius">
-          <%= link_to '削除', record_path(@record.id), method: :delete, class: 'btn_word' %>
+          <%= link_to '削除', record_path(@record.id), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn_word' %>
         </div>
       </div>
     </div>

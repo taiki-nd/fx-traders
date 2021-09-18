@@ -1,10 +1,11 @@
 <% comments.each do |comment| %>
   <div class="comment_area" id="comment__<%= comment.id %>">
     <div>
-      <%= comment.text %>
+      <p><%= comment.text %></p>
+      <p class="created_by"><%= l comment.created_at %></p>
     </div>
     <div>
-      <%= link_to '削除', record_comment_record_path(@record, comment), method: :delete, remote: true, class: "link_to_user" %>
+      <%= link_to '削除', record_comment_record_path(@record, comment), method: :delete, remote: true, data: { confirm: "削除しますか？" }, class: "link_to_user" %>
     </div>
   </div>
 <% end %>

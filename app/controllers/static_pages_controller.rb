@@ -4,6 +4,10 @@ class StaticPagesController < ApplicationController
     @rules = Rule.limit(4).order("created_at DESC")
   end
 
-  def about
+  def privacy_policy
   end
+
+  def disclaimer
+  end
+
 end

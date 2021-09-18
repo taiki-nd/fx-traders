@@ -1,20 +1,26 @@
 <section class="content">
-  <h2>取引記録のノートを作ろう！</h2>
+  <h2><span>取引記録のノートを作ろう！</span></h2>
   <%= image_tag 'trading_note_.jpg', class: "top_img" %>
-  <h2>自身の取引を可視化！</h2>
+  <h2><span>自身の取引を可視化！</span></h2>
   <p>自身の取引を記録することでデータを作りグラフ化していきます。</p>
   <p>自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！</p>
   <%= image_tag 'record_date.png', class: "top_img" %>
-  <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_" %>
-  <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_" %>
-  <h2>みんなの取引記録をみてみよう！</h2>
+  <div class="for_user">
+    <div class="btn btn--white btn--radius">
+      <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
+    </div>
+    <div class="btn btn--white btn--radius">
+      <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
+    </div>
+  </div>
+  <h2><span>みんなの取引記録をみてみよう！</span></h2>
     <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
   <%= link_to "もっと取引記録をみる", records_path, class: "btn_" %>
-  <h2>自身の取引手法の理解を深めよう！</h2>
+  <h2><span>自身の取引手法の理解を深めよう！</span></h2>
   <ul class="grid">
     <li>取引手法を明確化に</li>
     <li>自身の取引手法に対する深い理解</li>
@@ -23,11 +29,21 @@
     <li>取引手法をブラッシュアップ</li>
     <li>他トレーダーの手法への理解</li>
   </ul>
-  <h2>みんなの取引手法をみてみよう！</h2>
+  <div class="for_user">
+    <div class="btn btn--white btn--radius">
+      <%= link_to "新規登録して手法を紹介する！", new_user_registration_path, class: "btn_word" %>
+    </div>
+    <div class="btn btn--white btn--radius">
+      <%= link_to "ログインして手法を紹介する！", new_user_session_path, class: "btn_word" %>
+    </div>
+  </div>
+  <h2><span>みんなの取引手法をみてみよう！</span></h2>
   <div class="grid_">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>
   </div>
   <%= link_to "もっと取引手法をみる", records_path, class: "btn_" %>
+  <div class="space">
+  </div>
 </section>
