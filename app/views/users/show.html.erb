@@ -1,5 +1,7 @@
 <section class="content">
   <h2><span><%= @name %>さんのページ</span></h2>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
   <div class="follow_reration">
     <div class="btn">
