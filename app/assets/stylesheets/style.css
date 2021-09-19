@@ -548,6 +548,10 @@ table td{
 
 /* いいね関連 -------------------------------------------------------------------*/
 
+.like_table p{
+  display: inline;
+}
+
 .like-btn {
   font-size: 15px;
   color: #656869;
@@ -651,6 +655,73 @@ table td{
   
   .none{
     display: none;
+  }
+
+  /* top ----------------------------------------------------------------------------*/
+
+  .content{
+    padding-top: 30px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .for_user{
+    display: block;
+  }
+  .grid_res{
+    display: block;
+  }
+
+  .grid_{
+    margin-top: 40px;
+    gap: 25px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 100px;
+  }
+
+  .rule{
+    width: 90%;
+    height: 100px;
+    display: inline-block;
+    display: flex;
+    border-bottom: 1px solid #212121;
+  }
+  
+  .rule_right{
+    width: max-content ;
+  }
+  
+  .rule_img{
+    height: 60px;
+    width: 90px;
+    object-fit: cover;
+  }
+
+  .info{
+    font-size: 0.8rem;
+  }
+
+  .created_by{
+    font-size: 0.5rem;
+  }
+
+  .like_table p{
+    display: inline;
+    font-size: 0.7rem;
+  }
+
+  .like-btn {
+    font-size: 10px;
+    color: #656869;
+    margin-left: 10px;
+   }
+   
+  .unlike-btn {
+    font-size: 10px;
+    color: #ca4242;
+    margin-left: 10px;
   }
 
 }

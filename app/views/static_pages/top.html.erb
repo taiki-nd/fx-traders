@@ -21,7 +21,7 @@
   </div>
   <%= link_to "もっと取引記録をみる", records_path, class: "btn_" %>
   <h2><span>自身の取引手法の理解を深めよう！</span></h2>
-  <ul class="grid">
+  <ul class="grid grid_res">
     <li>取引手法を明確化に</li>
     <li>自身の取引手法に対する深い理解</li>
     <li>取引手法のルールを守るため</li>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <h2><span>みんなの取引手法をみてみよう！</span></h2>
-  <div class="grid_">
+  <div class="grid_ grid__res">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>

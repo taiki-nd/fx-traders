@@ -7,11 +7,11 @@
       <%= rule.like_rules.count %>
     </td>
   <% else %>
-    <td>
+    <div class="like_table">
       <%= link_to create_like_rule_path(rule), method: :POST, remote: true do %>
         <i class="fas fa-thumbs-up like-btn"></i>
       <% end %>
-      <%= rule.like_rules.count %>
-    </td>
+      <p><%= rule.like_rules.count %></p>
+    </div>
   <% end %>
 <% end %>
