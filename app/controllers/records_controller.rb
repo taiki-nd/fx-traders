@@ -7,6 +7,7 @@ class RecordsController < ApplicationController
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
+    @ad = Advertisement.where( 'id >= ?', rand(Advertisement.first.id..Advertisement.last.id) ).first
   end
 
   def new

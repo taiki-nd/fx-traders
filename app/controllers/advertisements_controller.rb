@@ -12,6 +12,6 @@ class AdvertisementsController < ApplicationController
   private
 
   def ad_params
-    params.require(:advertisement).permit(:img_url, :af_link)
+    params.require(:advertisement).permit(:img_url, :af_link, :ad_rate_id)
   end
 end

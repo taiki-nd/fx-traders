@@ -12,8 +12,11 @@
   </div>
 
   <div class="grid">
-    <% @records.each do |record| %>
-      <%= render partial: "shared/records", locals: { record: record } %>
+    <% @records.each_slice(8) do |records| %>
+      <% records.each do |record| %>
+        <%= render partial: "shared/records", locals: { record: record } %>
+      <% end %>
+      <div><%= link_to(image_tag(@ad.img_url), @ad.af_link)%></div>
     <% end %>
   </div>
   <div class="pagi">
