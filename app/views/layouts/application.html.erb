@@ -2,11 +2,10 @@
 <html>
   <head>
     <title>FxTraders</title>
-     <%= favicon_link_tag('logo.png') %>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag('logo.png') %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
@@ -19,15 +18,17 @@
         <a href="/"><%= image_tag 'fxtraders-logo.png', class: "title_img" %></a>
       </div>
       
-      <% if user_signed_in? %>
-        <div class="current_user">
-          user :   <%= link_to current_user.name, "/users/#{current_user.id}", class: 'user_name' %>
-        </div>
-      <% else %>
-        <div class="current_user">
-          
-        </div>
-      <% end %>
+      <div class="none">
+        <% if user_signed_in? %>
+          <div class="current_user">
+            user :   <%= link_to current_user.name, "/users/#{current_user.id}", class: 'user_name' %>
+          </div>
+        <% else %>
+          <div class="current_user">
+            
+          </div>
+        <% end %>
+      </div>
   
       <nav id="nav_bar">
         <ul class="navi_list">  

@@ -56,28 +56,6 @@ img{
   color: #656869;
 }
 
-h2 {
-  position: relative;
-  padding: 0 65px;
-  text-align: center;
-}
-
-h2:before {
-  position: absolute;
-  top: calc(50% - 1px);
-  left: 0;
-  width: 100%;
-  height: 2px;
-  content: '';
-  background: #000;
-}
-
-h2 span {
-  position: relative;
-  padding: 0 1em;
-  background: #fff;
-}
-
 h3 {
   width: 95%;
   position: relative;
@@ -161,7 +139,7 @@ h4:before {
 }
 
 .heading{
-  width: 50%;
+  width: 200px;
   height: 30px;
   margin-left: 30px;
 }
@@ -178,7 +156,8 @@ h4:before {
 }
 
 .current_user{
-  margin-left: 200px;
+  margin-left: 25px;
+  width: fit-content;
 }
 
 .user_name{
@@ -569,6 +548,10 @@ table td{
 
 /* いいね関連 -------------------------------------------------------------------*/
 
+.like_table p{
+  display: inline;
+}
+
 .like-btn {
   font-size: 15px;
   color: #656869;
@@ -613,4 +596,154 @@ table td{
   margin: 25px auto 25px;
   padding: 0 10px;
   border: 1px solid #000000;
+}
+
+/*  -------------------------------------------------------------------*/
+/*  -------------------------------------------------------------------*/
+/*  -------------------------------------------------------------------*/
+@media (min-width: 570px){
+  h2 {
+    position: relative;
+    padding: 0 65px;
+    text-align: center;
+  }
+  
+  h2:before {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: #000;
+  }
+  
+  h2 span {
+    position: relative;
+    padding: 0 1em;
+    background: #fff;
+  }
+}
+
+
+@media (max-width: 570px){
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h2::before,
+  h2::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+  }
+  
+  h2::before {
+    margin: -30px 20px 0 0;
+    border-top: 10px solid #000000;
+    border-left: 10px solid #656869;
+  }
+  
+  h2::after {
+    margin: 0 0 -30px 20px;
+    border-right: 10px solid #656869;
+    border-bottom: 10px solid #000000;
+  }
+  
+  .none{
+    display: none;
+  }
+
+  /* top ----------------------------------------------------------------------------*/
+
+  .content{
+    padding-top: 30px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .for_user{
+    display: block;
+  }
+
+  /* 一覧表示 ----------------------------------------------------------------------------*/
+
+  .grid_res{
+    display: block;
+  }
+
+  .grid_{
+    margin-top: 40px;
+    gap: 25px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 100px;
+  }
+
+  .rule{
+    width: 90%;
+    height: 100px;
+    display: inline-block;
+    display: flex;
+    border-bottom: 1px solid #212121;
+  }
+  
+  .rule_right{
+    width: max-content ;
+  }
+  
+  .rule_img{
+    height: 60px;
+    width: 90px;
+    object-fit: cover;
+  }
+
+  .info{
+    font-size: 0.8rem;
+  }
+
+  .created_by{
+    font-size: 0.5rem;
+  }
+
+  .like_table p{
+    display: inline;
+    font-size: 0.7rem;
+  }
+
+  .like-btn {
+    font-size: 10px;
+    color: #656869;
+    margin-left: 10px;
+   }
+   
+  .unlike-btn {
+    font-size: 10px;
+    color: #ca4242;
+    margin-left: 10px;
+  }
+
+  /* 詳細ページ ---------------------------------------------------------------------------*/
+
+  .record_content{
+    flex-direction: column;
+  }
+
+  .left_content,
+  .right_content{
+    width: 100%;
+  }
+
+  .recorded_img_show{
+    display: block;
+    margin: 0 auto;
+  }
+  .right_content table{
+    margin: 0 auto;
+  }
+
 }
