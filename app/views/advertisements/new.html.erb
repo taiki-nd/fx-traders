@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="container">
+    <h2><span>create ad</span></h2>
+    <%= form_with model: @ad, local: true do |form| %>
+    <%= form.text_field :img_url, placeholder: 'img' %>
+    <%= form.text_field :af_link, placeholder: 'af' %>
+    <%= form.submit "create ad" %>
+    <% end %>
+  </div>
+</div>
