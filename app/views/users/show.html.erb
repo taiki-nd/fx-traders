@@ -58,6 +58,8 @@
     </div>
   <% end %>
   </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
   <h3><%= @name %>さんの取引履歴</h3>
   <div class="grid">
     <% @records.each do |record| %>
@@ -82,4 +84,6 @@
       <%= link_to '編集', edit_user_path(current_user.id), class: 'btn_word' %>
     </div>
   <% end %>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
 </section>
