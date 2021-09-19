@@ -4,10 +4,10 @@ class RecordsController < ApplicationController
   before_action :set_record, only: [:edit, :update, :show, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
+  before_action :set_ad_2, only: [:index, :search]
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
-    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
   end
 
   def new
@@ -67,6 +67,10 @@ class RecordsController < ApplicationController
 
   def set_q
     @q = Record.ransack(params[:q])
+  end
+
+  def set_ad_2
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
   end
 
 end
