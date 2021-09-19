@@ -71,6 +71,8 @@
       </table>
     </div>
   </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
   <div class="entry_basis">
     <h3>エントリーした根拠</h3>
     <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
@@ -124,4 +126,6 @@
       </div>
     </div>
   </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
 </section>
