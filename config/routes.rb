@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   delete 'like_rule/:id' => 'like_rules#destroy', as: 'destroy_like_rule'
 
   resources :relationships, only: [:create, :destroy]
+
+  resources :advertisements, only: [:new, :create, :destroy]
 end
