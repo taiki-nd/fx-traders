@@ -69,6 +69,7 @@ fx-traders
 | ---------------- | ---------- | ------------------------------ |
 | date             | date       | null: false                    |
 | ashi_id          | integer    | null: false                    |
+| kind_id          | integer    | null: false                    |
 | pair_id          | integer    | null: false                    |
 | entry_rate       | float      | null: false                    |
 | exit_rate        | float      | null: false                    |
@@ -91,6 +92,7 @@ fx-traders
 | name             | string     | null: false                    |
 | issue_id         | integer    | null: false                    |
 | ashi_id          | integer    | null: false                    |
+| kind_id          | integer    | null: false                    |
 | pair_id          | integer    | null: false                    |
 | overview         | string     | null: false                    |
 | overview_content | text       | null: false                    |
@@ -162,5 +164,14 @@ fx-traders
 * belongs_to :record
 * belongs_to :method
 
+## advertisement テーブル
+
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| img_url    | string  | null: false |
+| af_link    | string  | null: false |
+| ad_rate_id | integer | null: false |
+
+
 ## er図
-[![Image from Gyazo](https://i.gyazo.com/33c6f69bf011a0d37f0a9e569498da2d.png)](https://gyazo.com/33c6f69bf011a0d37f0a9e569498da2d)
+[![Image from Gyazo](https://i.gyazo.com/3931df43cd6cf99121b18bcabdd92e49.png)](https://gyazo.com/3931df43cd6cf99121b18bcabdd92e49)
