@@ -668,6 +668,9 @@ table td{
   .for_user{
     display: block;
   }
+
+  /* 一覧表示 ----------------------------------------------------------------------------*/
+
   .grid_res{
     display: block;
   }
@@ -722,6 +725,25 @@ table td{
     font-size: 10px;
     color: #ca4242;
     margin-left: 10px;
+  }
+
+  /* 詳細ページ ---------------------------------------------------------------------------*/
+
+  .record_content{
+    flex-direction: column;
+  }
+
+  .left_content,
+  .right_content{
+    width: 100%;
+  }
+
+  .recorded_img_show{
+    display: block;
+    margin: 0 auto;
+  }
+  .right_content table{
+    margin: 0 auto;
   }
 
 }
