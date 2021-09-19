@@ -6,171 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-3.times do 
-  Record.create!(
-    date: '2020-12-20',
-    ashi_id: 3,
+55.times do
+  Rule.create!(
+    image: ActiveStorage::Blob.create_and_upload!(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")),filename: 'no_image.jpg'),
+    name: "aaaaaaa",
+    issue_id: 3,
+    ashi_id: 5,
     pair_id: 51,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
+    kind_id: 3,
+    overview: "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+    overview_content: "texttexttexttexttexttexttexttexttexttexttexttexttexttext",
+    entry: "texttexttexttexttexttexttexttexttexttexttexttexttexttext",
+    exit: "texttexttexttexttexttexttexttexttexttexttexttexttexttext",
+    summary: "texttexttexttexttexttexttexttexttexttexttexttexttexttext",
     user_id: 2
   )
 end
-
-5.times do 
-  Record.create!(
-    date: '2020-12-20',
-    ashi_id: 3,
-    pair_id: 51,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-15.times do 
-  Record.create!(
-    date: '2020-12-20',
-    ashi_id: 3,
-    pair_id: 108,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-12.times do 
-  Record.create!(
-    date: '2020-12-20',
-    ashi_id: 3,
-    pair_id: 108,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-15.times do 
-  Record.create!(
-    date: '2021-09-01',
-    ashi_id: 3,
-    pair_id: 108,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-12.times do 
-  Record.create!(
-    date: '2021-09-01',
-    ashi_id: 3,
-    pair_id: 108,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-3.times do 
-  Record.create!(
-    date: '2020-11-20',
-    ashi_id: 3,
-    pair_id: 91,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-5.times do 
-  Record.create!(
-    date: '2020-11-21',
-    ashi_id: 3,
-    pair_id: 91,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-15.times do 
-  Record.create!(
-    date: '2021-08-29',
-    ashi_id: 3,
-    pair_id: 43,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-12.times do 
-  Record.create!(
-    date: '2020-08-30',
-    ashi_id: 3,
-    pair_id: 43,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-15.times do 
-  Record.create!(
-    date: '2021-08-31',
-    ashi_id: 3,
-    pair_id: 43,
-    pips: 15,
-    entry_basis:'www',
-    issue_id: 2,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
-12.times do 
-  Record.create!(
-    date: '2021-08-31',
-    ashi_id: 3,
-    pair_id: 43,
-    pips: -12,
-    entry_basis:'www',
-    issue_id: 3,
-    lose_reason_id: 4,
-    lose_reason_text: 'www',
-    user_id: 2
-  )
-end
-
