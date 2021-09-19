@@ -12,8 +12,12 @@
       <%= link_to "一覧に戻る", rules_path, class: "btn_" %>
     </div>
     <div class="grid_">
-      <% @results.each do |rule| %>
-        <%= render partial: "shared/rules", locals: { rule: rule } %>
+      <% @results.each_slice(8) do |rules| %>
+        <% rules.each do |rule| %>
+          <%= render partial: "shared/rules", locals: { rule: rule } %>
+        <% end %>
+        <div class="ad_3"><%= link_to(image_tag(@ad_3.img_url), @ad_3.af_link)%></div>
+        <div class="ad_4"><%= link_to(image_tag(@ad_4.img_url), @ad_4.af_link)%></div>
       <% end %>
     </div>
     <div class="pagi">
