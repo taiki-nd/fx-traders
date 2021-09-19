@@ -43,6 +43,10 @@ class RulesController < ApplicationController
   def show
     @comment_rule = CommentRule.new
     @comment_rules = @rule.comment_rules
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
+    @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
   end
 
   def search
