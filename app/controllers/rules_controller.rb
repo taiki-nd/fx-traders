@@ -4,6 +4,7 @@ class RulesController < ApplicationController
   before_action :set_rule, only: [:edit, :update, :show, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
+  before_action :set_ad_3_4, only: [:index, :search]
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -42,6 +43,10 @@ class RulesController < ApplicationController
   def show
     @comment_rule = CommentRule.new
     @comment_rules = @rule.comment_rules
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
+    @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
   end
 
   def search
@@ -66,6 +71,11 @@ class RulesController < ApplicationController
 
   def set_q
     @q = Rule.ransack(params[:q])
+  end
+
+  def set_ad_3_4
+    @ad_3 = Advertisement.where(ad_rate_id: 3).order("RAND()").first
+    @ad_4 = Advertisement.where(ad_rate_id: 4).order("RAND()").first
   end
 
 end

@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     @from = @to - 1.month
     @records_by_user_month = Record.where(user_id: @user.id).where(created_at: @from...@to)
     @pair_cat_month = @records_by_user_month.group(:pair_id).pluck(:pair_id)
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
+    @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
   end
 
   private

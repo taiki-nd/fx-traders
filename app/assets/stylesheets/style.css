@@ -421,6 +421,13 @@ form input[type="submit"]:hover {
   object-fit: cover;
 }
 
+.ad_2{
+  margin-top: -25px;
+}
+
+.ad_3{
+  display: none;
+}
 
 /* 詳細表示 ---------------------------------------------------------------------*/
 
@@ -496,6 +503,15 @@ table td{
 .comment_area{
   display: flex;
   justify-content: space-between;
+}
+
+.ad_2_show{
+  display: none;
+}
+
+.ad_5{
+  text-align: center;
+  margin: 25px;
 }
 
 /* ユーザー詳細 -------------------------------------------------------------------*/
@@ -657,6 +673,7 @@ table td{
     display: none;
   }
 
+
   /* top ----------------------------------------------------------------------------*/
 
   .content{
@@ -725,6 +742,24 @@ table td{
     font-size: 10px;
     color: #ca4242;
     margin-left: 10px;
+  }
+
+  .ad_4{
+    display: none;
+  }
+
+  .ad_3{
+    display: block;
+  }
+
+  .ad_5{
+    display: none;
+  }
+
+  .ad_2_show{
+    display: block;
+    text-align: center;
+    margin: 25px;
   }
 
   /* 詳細ページ ---------------------------------------------------------------------------*/
