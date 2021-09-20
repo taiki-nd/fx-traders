@@ -781,4 +781,18 @@ table td{
     margin: 0 auto;
   }
 
+  .container_sign {
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 0 10px #212121;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .submit{
+    display: block;
+    margin: 0 auto;
+  }
+
 }
