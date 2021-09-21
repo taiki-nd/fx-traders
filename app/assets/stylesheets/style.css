@@ -395,6 +395,7 @@ form input[type="submit"]:hover {
 }
 
 .record_small_info{
+  margin: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -439,7 +440,7 @@ form input[type="submit"]:hover {
 }
 
 .ad_2{
-  margin-top: -25px;
+  margin-top: -5px;
 }
 
 .ad_3{
@@ -814,6 +815,15 @@ table td{
 
   .content{
     width: 95%;
+  }
+
+  form input[type="submit"] {
+    background-color: #212121;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    width: 200px
   }
 
 }
