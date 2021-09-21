@@ -13,9 +13,9 @@
   </div>
   <h3><%= @name %>さんの取引分析</h3>
   <h4>獲得pips数</h4>
-  <b>全体</b>
+  <p><b>全体</b><p>
   <%= column_chart @records_by_user.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
-  <b>直近1ヶ月</b>
+  <p><b>直近1ヶ月</b></p>
   <%= column_chart @records_by_user_month.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
   <div>
   </div>
@@ -26,7 +26,7 @@
   <%= pie_chart @records_by_user.group(:issue_id).count, donut: true, legend: false %>
   <p class="profit_factor">PF　:　<%= @all_pf.round(2) %></p>
   <h4>通貨ペア別勝率/PF</h4>
-  <b>全体</b>
+  <p><b>全体</b></p>
   <div class="win_lose">
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
   </div>

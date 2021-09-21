@@ -2,6 +2,21 @@
 
 /* 初期設定 ----------------------------------------------------------------*/
 
+h2{
+  font-size: 1.7rem;
+  margin: 25px;
+}
+
+h3{
+  font-size: 1.5rem;
+  margin: 20px;
+}
+
+h4{
+  font-size: 1.3rem;
+  margin: 15px;
+}
+
 img{
   max-width: 100%;
 }
@@ -22,11 +37,13 @@ img{
   width: 95%;
   margin: 0 auto;
 }
+
 .content{
   padding-top: 30px;
   width: 90%;
   margin: 0 auto;
 }
+
 .sub_title{
   margin-left: 20px;
 }
@@ -57,7 +74,7 @@ img{
 }
 
 h3 {
-  width: 95%;
+  width: 80%;
   position: relative;
   padding: 1rem .5rem;
 }
@@ -83,7 +100,7 @@ h3:after {
 }
 
 h4 {
-  width: 50%;
+  width: fit-content;
   position: relative;
   padding: 1rem 2rem;
   border-bottom: 6px solid #999999;
