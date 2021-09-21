@@ -812,4 +812,8 @@ table td{
     margin: 0 auto;
   }
 
+  .content{
+    width: 95%;
+  }
+
 }
