@@ -657,6 +657,7 @@ table td{
     padding: 0 1em;
     background: #fff;
   }
+
 }
 
 
@@ -676,15 +677,30 @@ table td{
   }
   
   h2::before {
-    margin: -30px 20px 0 0;
-    border-top: 10px solid #000000;
-    border-left: 10px solid #656869;
+    margin: -12px 6px 0 0;
+    border-top: 8px solid #000000;
+    border-left: 8px solid #656869;
   }
   
   h2::after {
-    margin: 0 0 -30px 20px;
-    border-right: 10px solid #656869;
-    border-bottom: 10px solid #000000;
+    margin: 0 0 -12px 6px;
+    border-right: 8px solid #656869;
+    border-bottom: 8px solid #000000;
+  }
+
+  h2{
+    font-size: 1.5rem;
+    margin: 25px;
+  }
+  
+  h3{
+    font-size: 1.3rem;
+    margin: 20px;
+  }
+  
+  h4{
+    font-size: 1.1rem;
+    margin: 15px;
   }
   
   .none{
@@ -815,6 +831,10 @@ table td{
 
   .content{
     width: 95%;
+  }
+  .container{
+    width: 98%;
+    margin: 0 auto;
   }
 
   form input[type="submit"] {
