@@ -1,0 +1,14 @@
+<section class="content">
+  <h2><span><%= @user.name %>さんの取引記録</span></h2>
+  <div class="grid">
+    <% @records.each_slice(8) do |records| %>
+      <% records.each do |record| %>
+        <%= render partial: "shared/records", locals: { record: record } %>
+      <% end %>
+      <div class="ad_2"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
+    <% end %>
+  </div>
+  <div class="pagi">
+    <%= paginate @records %>
+  </div>
+</section>

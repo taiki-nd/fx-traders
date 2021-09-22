@@ -68,14 +68,14 @@
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
-  <%= link_to 'もっと見る', "/records/search?keyword=#{@name}&commit=検索", class: "link_to_user" %>
+  <%= link_to 'もっと見る', index_records_path(@user.id), class: "link_to_user" %>
   <h3><%= @name %>さんの取引手法</h3>
   <div class="grid_">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>
   </div>
-  <%= link_to 'もっと見る', "/rules/search?keyword=#{@name}&commit=検索", class: "link_to_user" %>
+  <%= link_to 'もっと見る', index_rules_path(@user.id) , class: "link_to_user" %>
   <% if user_signed_in? && current_user.id == @user.id %>
     <h3><%= @name %>さんの専用エリア</h3>
     <div class="btn btn--white btn--radius">

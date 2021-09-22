@@ -19,10 +19,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:edit, :update, :show] do
+  resources :users, only: [:edit, :update, :show,] do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers' 
   end
+
+  get "index_records" => 'users#index_records'
+  get "index_rules" => 'users#index_rules'
 
   post 'like_record/:id' => 'like_records#create', as: 'create_like_record'
   delete 'like_record/:id' => 'like_records#destroy', as: 'destroy_like_record'
