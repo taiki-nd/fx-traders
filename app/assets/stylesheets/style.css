@@ -468,10 +468,12 @@ form input[type="submit"]:hover {
 
 .recorded_img_show{
   width: 90%;
+  margin: 0 auto;
 }
 
 table{
   width: 90%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
@@ -521,6 +523,12 @@ table td{
 .comment_area{
   display: flex;
   justify-content: space-between;
+}
+
+.move_page{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #656869;
 }
 
 .ad_2_show{
