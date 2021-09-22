@@ -26,7 +26,7 @@ img{
 }
 
 .recorded_img{
-  width: 300px;
+  max-width: 300px;
 }
 
 .space{
@@ -385,7 +385,7 @@ form input[type="submit"]:hover {
 
 .recorded_img{
   height: 200px;
-  width: 300px;
+  max-width: 300px;
   object-fit: cover;
 }
 
@@ -423,7 +423,7 @@ form input[type="submit"]:hover {
 
 .rule{
   width: 90%;
-  height: 100px;
+  height: fit-content;
   display: inline-block;
   display: flex;
   border-bottom: 1px solid #212121;
@@ -844,6 +844,15 @@ table td{
     border: 0;
     font-size: 18px;
     width: 200px
+  }
+
+  .btn{
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #212121;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
   }
 
 }
