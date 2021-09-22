@@ -20,7 +20,7 @@
   <%= form.text_area :entry_basis, placeholder: "エントリー根拠", size: "30x10" %>
   <p class="explain">勝敗を選択してください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:issue_id, Issue.all, :id, :name, {}, {class:"select-box", id:"issue"})%>
-  <p class="explain">損失が出た一番の理由を選択してください</p>
+  <p class="explain">取引結果の理由を選択してください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:lose_reason_id, LoseReason.all, :id, :name, {}, {class:"select-box", id:"lose_reason"})%>
   <p class="explain">本取引の総括を入力してください<b class="indispensable">(必須)</b></p>
   <%= form.text_area :lose_reason_text, placeholder: "なぜ勝ったのか、なぜ負けたのか、その他", size: "30x10" %>

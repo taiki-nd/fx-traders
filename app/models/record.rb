@@ -8,6 +8,7 @@ class Record < ApplicationRecord
     validates :entry_basis
     validates :issue_id
     validates :kind_id
+    validates :lose_reason_id
     validates :lose_reason_text
   end
 
@@ -16,6 +17,7 @@ class Record < ApplicationRecord
     validates :pair_id
     validates :issue_id
     validates :kind_id
+    validates :lose_reason_id
   end
 
   belongs_to :user
