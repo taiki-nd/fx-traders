@@ -1,5 +1,15 @@
 <section class="content">
   <h2><span><%= @rule.name %></span></h2>
+  
+<%#  <div class="move_page">
+<%#    <% if @rule.previous_rule.present? %>
+<%#      <%= link_to "< PREV", rule_path(@rule.previous_rule), class: "btn_word"%>
+<%#    <% end %>
+<%#    <% if @rule.next_rule.present? %>
+<%#      <%= link_to "NEXT >",rule_path(@rule.next_rule), class: "btn_word" %>
+<%#    <% end %>
+<%#  </div> %>
+  
   <div class="record_content">
     <div class="left_content">
       <h3>取引画像</h3>
@@ -69,6 +79,16 @@
       </div>
     </div>
   <% end %>
+  
+<%#  <div class="move_page">
+<%#    <% if @rule.previous_rule.present? %>
+<%#      <%= link_to "< PREV", rule_path(@rule.previous_rule), class: "btn_word"%>
+<%#    <% end %>
+<%#    <% if @rule.next_rule.present? %>
+<%#      <%= link_to "NEXT >",rule_path(@rule.next_rule), class: "btn_word" %>
+<%#    <% end %>
+<%#  </div> %>
+  
   <h3>コメント</h3>
   <div class="container">
     <div id="likes_buttons_<%= @rule.id %>">
