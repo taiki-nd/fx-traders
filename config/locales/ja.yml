@@ -210,6 +210,7 @@ ja:
   activerecord:
     model:
       record: 取引記録
+      rule: 取引記録
     attributes:
       record:
         date: 日付
@@ -221,9 +222,6 @@ ja:
         issue_id: 勝敗
         lose_reason_id: 勝敗理由
         lose_reason_text: 勝敗理由
-    model:
-      rule: 取引記録
-    attributes:
       rule:
         name: 日付
         issue_id: 勝敗
