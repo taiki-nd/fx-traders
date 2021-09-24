@@ -31,5 +31,7 @@ class Rule < ApplicationRecord
   belongs_to :pair
   belongs_to :issue
   belongs_to :kind
+  belongs_to :indi_main
+  belongs_to :indi_sub
 
 end

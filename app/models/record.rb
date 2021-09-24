@@ -31,5 +31,7 @@ class Record < ApplicationRecord
   belongs_to :issue
   belongs_to :lose_reason
   belongs_to :kind
+  belongs_to :indi_main
+  belongs_to :indi_sub
 
 end
