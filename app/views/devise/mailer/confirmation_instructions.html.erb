@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %>さん、こんにちは！</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>FX-Traders運営です。</p>
+
+<p>以下のリンクからメールアドレスの認証をしてください。</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>こちらのメールに心当たりがない場合は削除してください。</p>
+
