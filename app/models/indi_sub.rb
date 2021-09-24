@@ -1,4 +1,4 @@
-class IndiMain < ActiveHash::Base
+class IndiSub < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: 'Adaptive Moving Average' },
