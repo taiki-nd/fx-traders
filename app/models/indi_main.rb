@@ -38,7 +38,8 @@ class IndiMain < ActiveHash::Base
     { id: 36, name: 'Awesome Oscillator' },
     { id: 37, name: 'Fractals' },
     { id: 38, name: 'Gator Oscillator' },
-    { id: 39, name: 'Market Facilitation Index' }
+    { id: 39, name: 'Market Facilitation Index' },
+    { id: 40, name: 'その他' }
   ]
  
    include ActiveHash::Associations
