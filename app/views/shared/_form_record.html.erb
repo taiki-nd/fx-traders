@@ -11,9 +11,9 @@
   <p class="explain">トレード種別の選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
   <p class="explain">メインインジケーターの選択をしてください</p>
-  <%= form.collection_select(:kind_id,  IndiMain.all, :id, :name, {}, {class:"select-box", id:" IndiMain"}) %>
-  <p class="explain">メインインジケーターの選択をしてください</p>
-  <%= form.collection_select(:kind_id,  IndiSub.all, :id, :name, {}, {class:"select-box", id:" IndiSub"}) %>
+  <%= form.collection_select(:indi_main_id, IndiMain.all, :id, :name, {}, {class:"select-box", id:" indimain"}) %>
+  <p class="explain">サブインジケーターの選択をしてください</p>
+  <%= form.collection_select(:indi_sub_id, IndiSub.all, :id, :name, {}, {class:"select-box", id:" indisub"}) %>
   <p class="explain">エントリー価格を入力してください</p>
   <%= form.text_field :entry_rate, placeholder: "エントリー価格" %>
   <p class="explain">イグジット価格を入力してください</p>
