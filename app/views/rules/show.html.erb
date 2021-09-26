@@ -30,6 +30,18 @@
           <th>推奨トレード種別</th>
           <td><%= @rule.kind.name %> </td>
         </tr>
+        <% if @rule.indi_main != nil %>
+          <tr>
+            <th>メインインジケーター</th>
+            <td><%= @rule.indi_main.name %> </td>
+          </tr>
+        <% end %>
+        <% if @rule.indi_sub != nil %>
+          <tr>
+            <th>サブインジケーター</th>
+            <td><%= @rule.indi_sub.name %> </td>
+          </tr>
+        <% end %>
         <% if @rule.issue.id == 2 %>
           <tr>
             <th>勝てる？負ける？</th>
