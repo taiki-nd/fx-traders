@@ -8,6 +8,8 @@ class Record < ApplicationRecord
     validates :entry_basis
     validates :issue_id
     validates :kind_id
+    validates :indi_main
+    validates :indi_sub
     validates :lose_reason_id
     validates :lose_reason_text
   end
@@ -18,6 +20,8 @@ class Record < ApplicationRecord
     validates :issue_id
     validates :kind_id
     validates :lose_reason_id
+    validates :indi_main
+    validates :indi_sub
   end
 
   belongs_to :user

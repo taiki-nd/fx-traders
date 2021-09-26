@@ -7,6 +7,8 @@ class Rule < ApplicationRecord
     validates :kind_id
     validates :pair_id
     validates :issue_id
+    validates :indi_main
+    validates :indi_sub
     validates :overview
     validates :overview_content
     validates :entry
@@ -19,6 +21,8 @@ class Rule < ApplicationRecord
     validates :pair_id
     validates :issue_id
     validates :kind_id
+    validates :indi_main
+    validates :indi_sub
   end
 
   belongs_to :user
