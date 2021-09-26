@@ -338,7 +338,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  background-color: #bbbbbb;
   width: 300px
 }
 
@@ -586,6 +586,13 @@ table td{
   font-size: 18px;
   width: 300px;
   text-align: center;
+}
+
+.btn:hover {
+  background-color: #bbbbbb;
+  border: 1px solid #bbbbbb;
+  width: 300px;
+  border-radius: 20px;
 }
 
 /* いいね関連 -------------------------------------------------------------------*/
