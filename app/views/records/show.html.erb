@@ -49,6 +49,18 @@
           <th>トレード種別</th>
           <td><%= @record.kind.name %> </td>
         </tr>
+        <% if @record.indi_main != nil %>
+          <tr>
+            <th>メインインジケーター</th>
+            <td><%= @record.indi_main.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.indi_sub != nil %>
+          <tr>
+            <th>サブインジケーター</th>
+            <td><%= @record.indi_sub.name %> </td>
+          </tr>
+        <% end %>
         <% if @record.entry_rate != nil %>
           <tr>
             <th>エントリー価格</th>

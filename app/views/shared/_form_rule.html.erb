@@ -10,6 +10,10 @@
   <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
   <p class="explain">トレード種別の選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"kind"}) %>
+  <p class="explain">メインインジケーターの選択をしてください</p>
+  <%= form.collection_select(:indi_main_id, IndiMain.all, :id, :name, {}, {class:"select-box", id:" indimain"}) %>
+  <p class="explain">サブインジケーターの選択をしてください</p>
+  <%= form.collection_select(:indi_sub_id, IndiSub.all, :id, :name, {}, {class:"select-box", id:" indisub"}) %>
   <p class="explain">勝てますか？負けますか？<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:issue_id, Issue.all, :id, :name, {}, {class:"select-box", id:"issue"}) %>
   <p class="explain">取引手法の概要のタイトル<b class="indispensable">(必須)</b></p>

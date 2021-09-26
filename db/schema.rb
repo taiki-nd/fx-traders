@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_144259) do
+ActiveRecord::Schema.define(version: 2021_09_26_112730) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_144259) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind_id"
+    t.integer "indi_main_id"
+    t.integer "indi_sub_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
@@ -129,6 +131,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_144259) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind_id"
+    t.integer "indi_main_id"
+    t.integer "indi_sub_id"
     t.index ["user_id"], name: "index_rules_on_user_id"
   end
 
@@ -145,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_09_23_144259) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

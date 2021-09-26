@@ -1,4 +1,4 @@
-class IndiMain < ActiveHash::Base
+class IndiSub < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: 'Adaptive Moving Average' },
@@ -40,7 +40,7 @@ class IndiMain < ActiveHash::Base
     { id: 38, name: 'Gator Oscillator' },
     { id: 39, name: 'Market Facilitation Index' },
     { id: 40, name: 'ZigZag' },
-    { id: 41, name: 'その他' }
+    { id: 41, name: 'その他' },
   ]
  
    include ActiveHash::Associations
