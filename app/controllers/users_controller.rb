@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [:edit, :show]
+  before_action :set_user_id, except: [:edit, :update, :show]
+
   def edit
   end
 
@@ -12,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @name = @user.name
     @records = @user.records.order("created_at DESC").page(params[:page]).per(12)
     @rules = @user.rules.order("created_at DESC").page(params[:page]).per(8)
@@ -33,13 +35,11 @@ class UsersController < ApplicationController
   end
 
   def index_records
-    @user = User.find(params[:user_id])
     @records = Record.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
   end
 
   def index_rules
-    @user = User.find(params[:user_id])
     @rules = Rule.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
     @ad_3 = Advertisement.where(ad_rate_id: 3).order("RAND()").first
     @ad_4 = Advertisement.where(ad_rate_id: 4).order("RAND()").first
@@ -49,6 +49,14 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_user_id
+    @user = User.find(params[:user_id])
   end
 
 end
