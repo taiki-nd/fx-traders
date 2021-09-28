@@ -15,17 +15,17 @@ crumb :user_signin do
 end
 
 crumb :user_show do |user|
-  link "#{user.name}さんの詳細ページ", user_path
+  link "#{user.name}さんの詳細ページ", user_path(user.id)
   parent :root
 end
 
   crumb :user_records do |user|
-    link "#{user.name}さんの取引履歴一覧", index_records_path
+    link "#{user.name}さんの取引履歴一覧", user_index_records_path
     parent :user_show, user
   end
 
   crumb :user_rules do |user|
-    link "#{user.name}さんの取引手法一覧", index_rules_path
+    link "#{user.name}さんの取引手法一覧", user_index_rules_path
     parent :user_show
   end
 
