@@ -21,7 +21,7 @@ end
 
   crumb :user_records do |user|
     link "#{user.name}さんの取引履歴一覧", index_records_path
-    parent :user_show
+    parent :user_show, user
   end
 
   crumb :user_rules do |user|
