@@ -1,5 +1,23 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "https://fx-traders.herokuapp.com/"
+
+  add records_path, changefreq: 'daily'
+  Record.find_each do |record|
+    add record_path(record), changefreq: 'daily', lastmod: record.updated_at
+  end
+
+  add rules_path, changefreq: 'daily'
+  Rule.find_each do |rule|
+    add rule_path(rule), changefreq: 'daily', lastmod: rule.updated_at
+  end
+
+  User.find_each do |user|
+    add user_path(user), changefreq: 'daily', lastmod: user.updated_at
+  end
+
+  add root_path, changefreq: 'daily'
+  add privacy_policy_path, changefreq: 'daily'
+  add disclaimer_path, changefreq: 'daily'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
