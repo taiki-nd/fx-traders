@@ -1,7 +1,7 @@
 <% if @record.issue.id == 2 %>
   <% set_meta_tags title: "#{@record.pair.name}で#{@record.pips}pips獲得した取引", description: "#{@record.pair.name}で#{@record.pips}pips獲得した取引の詳細ページです。#{@record.kind.name}で#{@record.indi_main.name}(インジケーター)を使って取引をしています。" %>
 <% else @record.issue.id == 3 %>
-  
+  <% set_meta_tags title: "#{@record.pair.name}で#{@record.pips}pips獲得した取引", description: "#{@record.pair.name}での取引の詳細ページです。#{@record.kind.name}で#{@record.indi_main.name}(インジケーター)を使って取引をしています。" %>
 <% end %>
 
 <section class="content">
