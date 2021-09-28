@@ -26,22 +26,22 @@ end
 
   crumb :user_rules do |user|
     link "#{user.name}さんの取引手法一覧", user_index_rules_path
-    parent :user_show
+    parent :user_show, user
   end
 
   crumb :user_edit do |user|
     link "#{user.name}さんの登録情報の編集", edit_user_path
-    parent :user_show
+    parent :user_show, user
   end
 
   crumb :user_followers do |user|
-    link "#{user.name}さんのフォロワー", user_followers_path
-    parent :user_show
+    link "フォロワー", user_followers_path
+    parent :user_show, user
   end
 
-  crumb :user_followers do |user|
-    link "#{user.name}さんがフォロー", user_followings_path
-    parent :user_show
+  crumb :user_followings do |user|
+    link "フォロー", user_followings_path
+    parent :user_show, user
   end
 
 # record-------------------------------------------------------
