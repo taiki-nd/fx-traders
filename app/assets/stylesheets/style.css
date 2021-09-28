@@ -39,7 +39,6 @@ img{
 }
 
 .content{
-  padding-top: 30px;
   width: 90%;
   margin: 0 auto;
 }
@@ -140,6 +139,14 @@ h4:before {
   box-shadow: 0 0 10px #212121;
   background-color: #fff;
   box-sizing: border-box;
+}
+.breadcrumbs{
+  display: block;
+  margin-top: 30px;
+  margin-left: 10px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  color: #656869;
 }
 
 /* header ---------------------------------------------------------------------*/
@@ -726,7 +733,6 @@ table td{
   /* top ----------------------------------------------------------------------------*/
 
   .content{
-    padding-top: 30px;
     width: 100%;
     margin: 0 auto;
   }

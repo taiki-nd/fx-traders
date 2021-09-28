@@ -1,3 +1,7 @@
+<% set_meta_tags title: "#{@user.name}さんの取引手法一覧}", description: "#{@user.name}さんの取引手法の一覧ページになります" %>
+<div class="breadcrumbs">
+  <% breadcrumb :user_rules, @user %>
+</div>
 <section class="content">
   <h2><span><% @user.name %>さんの取引手法</span></h2>
   <div class="grid_">
