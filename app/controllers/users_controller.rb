@@ -33,13 +33,13 @@ class UsersController < ApplicationController
   end
 
   def index_records
-    @user = User.find(params[:format])
+    @user = User.find(params[:user_id])
     @records = Record.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
   end
 
   def index_rules
-    @user = User.find(params[:format])
+    @user = User.find(params[:user_id])
     @rules = Rule.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
     @ad_3 = Advertisement.where(ad_rate_id: 3).order("RAND()").first
     @ad_4 = Advertisement.where(ad_rate_id: 4).order("RAND()").first
