@@ -1,4 +1,7 @@
 <% set_meta_tags title: 'fxの取引記録一覧', description: 'みんなのfx取引の一覧が集結！通貨ペア、時間足、トレード種別（スキャルピング、デイトレ...）で検索して参考になる取引を見つけよう！' %>
+<div class="breadcrumbs">
+  <% breadcrumb :record_search, @record %>
+</div>
 <section class="content">
   <h2><span>以下の条件での検索結果</span></h2>
   <% if @results.length != 0 %>

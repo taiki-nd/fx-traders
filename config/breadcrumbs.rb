@@ -52,14 +52,19 @@ crumb :records_index do
 end
 
   crumb :record_show do
-    link "取引記録一覧", record_path
+    link "取引詳細", record_path
     parent :records_index
   end
 
     crumb :record_edit do
-      link "取引記録一覧", edit_record_path
+      link "取引記録の編集", edit_record_path
       parent :record_show
     end
+  
+  crumb :record_search do
+    link "取引記録の検索結果", search_records_path
+    parent :records_index
+  end
 
 crumb :record_new do
   link "新規取引記録", new_record_path
@@ -69,19 +74,24 @@ end
 # rule-------------------------------------------------------
 
 crumb :rules_index do
-  link "取引記録一覧", rules_path
+  link "取引手法一覧", rules_path
   parent :root
 end
 
   crumb :rule_show do
-    link "取引記録一覧", rule_path
+    link "取引手法詳細", rule_path
     parent :rules_index
   end
 
-    crumb :record_edit do
-      link "取引記録一覧", edit_rule_path
+    crumb :rule_edit do
+      link "取引手法の編集", edit_rule_path
       parent :rule_show
     end
+  
+  crumb :rule_search do
+    link "取引手法の検索結果", search_rules_path
+    parent :rules_index
+  end
 
 crumb :rule_new do
   link "新規取引記録", new_rule_path
