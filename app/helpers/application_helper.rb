@@ -12,7 +12,7 @@ module ApplicationHelper
       separator: '|',
       icon: [
         { href: image_url('logo.png') },
-        { href: image_url('recorde_date.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+        { href: image_url('record_date.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: :site,
