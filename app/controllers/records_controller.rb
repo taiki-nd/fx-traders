@@ -6,6 +6,8 @@ class RecordsController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_2, only: [:index, :search, :show]
 
+  impressionist actions: [:index, :show]
+
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
   end
@@ -40,6 +42,7 @@ class RecordsController < ApplicationController
     @comment_records = @record.comment_records
     @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    impressionist(@record, nil, unique: [:session_hash])
   end
 
   def destroy

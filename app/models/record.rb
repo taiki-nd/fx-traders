@@ -1,5 +1,7 @@
 class Record < ApplicationRecord
 
+  is_impressionable counter_cache: true
+
   with_options presence: true do
     validates :date
     validates :ashi_id
