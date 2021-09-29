@@ -5,6 +5,9 @@ class RecordsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_2, only: [:index, :search, :show]
+  before_action :set_record_rank, only: [:index, :new, :edit, :search, :show]
+
+  impressionist actions: [:index, :show]
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -38,8 +41,9 @@ class RecordsController < ApplicationController
   def show
     @comment_record = CommentRecord.new
     @comment_records = @record.comment_records
-    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    @ad_5__ = Advertisement.where(ad_rate_id: 5).order("RAND()").third
+    impressionist(@record, nil, unique: [:session_hash])
   end
 
   def destroy
@@ -54,7 +58,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:date, :ashi_id, :pair_id, :kind_id, :entry_rate, :exit_rate, :pips, :entry_basis, :issue_id, :lose_reason_id, :lose_reason_text, :image, :indi_main_id, :indi_sub_id).merge(user_id: current_user.id)
+    params.require(:record).permit(:date, :ashi_id, :pair_id, :kind_id, :entry_rate, :exit_rate, :pips, :entry_basis, :issue_id, :lose_reason_id, :lose_reason_text, :image, :indi_main_id, :indi_sub_id, :order_id).merge(user_id: current_user.id)
   end
 
   def set_record
@@ -72,8 +76,14 @@ class RecordsController < ApplicationController
   end
 
   def set_ad_2
-    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
     @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
+    @ad_2__ = Advertisement.where(ad_rate_id: 2).order("RAND()").third
+  end
+
+  def set_record_rank
+    @record_ranks = Record.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
 end

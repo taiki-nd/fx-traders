@@ -9,6 +9,7 @@
       <%= search_form_for @q, url: search_rules_path do |f| %>
         <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '推奨通貨ペアで検索' %>
         <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '推奨時間足で検索' %>
+        <%= f.collection_select :indi_main_id_eq,IndiMain.all,:id,:name,include_blank: 'インジケーターで検索' %>
         <%= f.collection_select :kind_id_eq,Kind.all,:id,:name,include_blank: '推奨トレード種別で検索' %>
         <%= f.collection_select :issue_id_eq,Issue.all,:id,:name,include_blank: '勝てるか負けるかで検索' %>
         <%= f.submit '検索' %>
@@ -31,4 +32,5 @@
     該当する記録はありません
     <%= link_to "一覧に戻る", rules_path, class: "btn_" %>
   <% end %>
+  <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
 </section>

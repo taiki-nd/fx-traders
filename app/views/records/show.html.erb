@@ -67,6 +67,12 @@
             <td><%= @record.indi_sub.name %> </td>
           </tr>
         <% end %>
+        <% if @record.order != nil %>
+          <tr>
+            <th>注文方式</th>
+            <td><%= @record.order.name %> </td>
+          </tr>
+        <% end %>
         <% if @record.entry_rate != nil %>
           <tr>
             <th>エントリー価格</th>
@@ -106,8 +112,8 @@
       </table>
     </div>
   </div>
-  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
-  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5__.img_url), @ad_5__.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
   <div class="entry_basis">
     <h3>エントリーした根拠</h3>
     <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
@@ -138,7 +144,7 @@
 <%#      <%= link_to "NEXT >",record_path(@record.next_record), class: "btn_word" %>
 <%#    <% end %>
 <%#  </div> %>
-  
+  <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
   <h3>コメント</h3>
   <div class="container">
     <div id="likes_buttons_<%= @record.id %>">
@@ -159,6 +165,9 @@
           </td>
         <% end %>
       <% end %>
+    </div>
+    <div>
+      <i class="fas fa-eye like-btn"></i>_<%= @record.impressions_count %>
     </div>
     <%= form_with model: [@record, @comment_record],url: record_comment_records_path(@record), local: false do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>

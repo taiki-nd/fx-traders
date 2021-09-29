@@ -1,5 +1,13 @@
 class Rule < ApplicationRecord
 
+  def self.last_week
+    to = Date.current.at_end_of_day
+    from = to - 1.week
+    Rule.includes(:user).where(created_at: from...to).order('impressions_count DESC').limit(4)
+  end
+
+  is_impressionable counter_cache: true
+
   with_options presence: true do
     validates :image
     validates :name

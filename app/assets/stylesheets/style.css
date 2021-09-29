@@ -747,6 +747,11 @@ table td{
     display: block;
   }
 
+  .grid_for_phone{
+    display: flex;
+    overflow-x: scroll;
+  }
+
   .grid_{
     margin-top: 40px;
     gap: 25px;

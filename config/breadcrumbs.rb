@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", root_path
+  link "Top", root_path
 end
 
 # user-------------------------------------------------------

@@ -5,6 +5,9 @@ class RulesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_3_4, only: [:index, :search]
+  before_action :set_rule_rank, except: [:create, :update, :destroy]
+
+  impressionist actions: [:index, :show]
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -47,6 +50,7 @@ class RulesController < ApplicationController
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
     @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
+    impressionist(@rule, nil, unique: [:session_hash])
   end
 
   def search
@@ -76,6 +80,12 @@ class RulesController < ApplicationController
   def set_ad_3_4
     @ad_3 = Advertisement.where(ad_rate_id: 3).order("RAND()").first
     @ad_4 = Advertisement.where(ad_rate_id: 4).order("RAND()").first
+  end
+
+  def set_rule_rank
+    @rule_ranks = Rule.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
 end

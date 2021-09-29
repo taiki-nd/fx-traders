@@ -1,4 +1,4 @@
-<% set_meta_tags title: "#{@rule.name}", description: "#{@rule.pair.name}で#{@rule.indi_main.name}などを使った取引手法の紹介です！エントリー条件から出口戦略まで詳しく紹介!!" %>
+<% set_meta_tags title: "#{@rule.name}", description: "#{@rule.entry}" %>
 <div class="breadcrumbs">
   <% breadcrumb :rule_show, @rule %>
 </div>
@@ -104,7 +104,7 @@
 <%#      <%= link_to "NEXT >",rule_path(@rule.next_rule), class: "btn_word" %>
 <%#    <% end %>
 <%#  </div> %>
-  
+  <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
   <h3>コメント</h3>
   <div class="container">
     <div id="likes_buttons_<%= @rule.id %>">
@@ -125,6 +125,9 @@
           </td>
         <% end %>
       <% end %>
+    </div>
+    <div>
+      <i class="fas fa-eye like-btn"></i>_<%= @rule.impressions_count %>
     </div>
     <%= form_with model: [@rule, @comment_rule], url: rule_comment_rules_path(@rule), local: false do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
