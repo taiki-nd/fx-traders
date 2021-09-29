@@ -54,7 +54,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:date, :ashi_id, :pair_id, :kind_id, :entry_rate, :exit_rate, :pips, :entry_basis, :issue_id, :lose_reason_id, :lose_reason_text, :image, :indi_main_id, :indi_sub_id).merge(user_id: current_user.id)
+    params.require(:record).permit(:date, :ashi_id, :pair_id, :kind_id, :entry_rate, :exit_rate, :pips, :entry_basis, :issue_id, :lose_reason_id, :lose_reason_text, :image, :indi_main_id, :indi_sub_id, :order_id).merge(user_id: current_user.id)
   end
 
   def set_record
