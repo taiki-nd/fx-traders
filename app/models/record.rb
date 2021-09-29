@@ -33,5 +33,6 @@ class Record < ApplicationRecord
   belongs_to :kind
   belongs_to :indi_main
   belongs_to :indi_sub
+  belongs_to :order
 
 end
