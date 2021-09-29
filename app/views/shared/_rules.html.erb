@@ -9,6 +9,9 @@
     <p class="info">
       <%= rule.pair.name %> ( <%= rule.kind.name%> )
     </p>
+    <% if rule.indi_main_id != nil %>
+      <p class="info">インジケーター：<%= rule.indi_main.name %></p>
+    <% end %>
     <div class="record_small_info">
       <div id="likes_buttons_<%= rule.id %>">
         <%= render partial: 'like_rules/like', locals: {rule: rule} %>
