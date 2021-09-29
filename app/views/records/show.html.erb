@@ -182,4 +182,12 @@
   </div>
   <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
+  <h3>閲覧数トップ4</h3>
+  <div class="grid grid_for_phone">
+    <% @record_ranks.each do |record| %>
+      <%= render partial: "shared/records", locals: { record: record } %>
+    <% end %>
+  </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5__.img_url), @ad_5__.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
 </section>

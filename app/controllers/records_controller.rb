@@ -10,10 +10,15 @@ class RecordsController < ApplicationController
 
   def index
     @records = Record.includes(:user).order("created_at DESC").page(params[:page]).per(20)
+    @record_ranks = Record.last_week
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
   def new
     @record = Record.new
+    @record_ranks = Record.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
   def create
@@ -38,10 +43,12 @@ class RecordsController < ApplicationController
   end
 
   def show
+    @record_ranks = Record.last_week
     @comment_record = CommentRecord.new
     @comment_records = @record.comment_records
     @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
+    @ad_5__ = Advertisement.where(ad_rate_id: 5).order("RAND()").third
     impressionist(@record, nil, unique: [:session_hash])
   end
 
@@ -52,6 +59,9 @@ class RecordsController < ApplicationController
 
   def search
     @results = @q.result.order("created_at DESC").page(params[:page]).per(20)
+    @record_ranks = Record.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
   private
@@ -77,6 +87,7 @@ class RecordsController < ApplicationController
   def set_ad_2
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
     @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
+    @ad_2__ = Advertisement.where(ad_rate_id: 2).order("RAND()").third
   end
 
 end

@@ -27,5 +27,13 @@
   <div class="pagi">
     <%= paginate @records %>
   </div>
+  <h3>取引履歴閲覧数トップ4</h3>
+  <div class="grid grid_for_phone">
+    <% @record_ranks.each do |record| %>
+      <%= render partial: "shared/records", locals: { record: record } %>
+    <% end %>
+  </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
 </section>
 
