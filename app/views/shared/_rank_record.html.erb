@@ -1,0 +1,8 @@
+<h3>週間PV数TOP4(取引履歴)</h3>
+  <div class="grid grid_for_phone">
+    <% records.each do |record| %>
+      <%= render partial: "shared/records", locals: { record: record } %>
+    <% end %>
+  </div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>

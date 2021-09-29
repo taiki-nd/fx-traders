@@ -112,8 +112,8 @@
       </table>
     </div>
   </div>
-  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
-  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5__.img_url), @ad_5__.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
   <div class="entry_basis">
     <h3>エントリーした根拠</h3>
     <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
@@ -182,12 +182,5 @@
   </div>
   <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
-  <h3>週間PV数TOP4(取引履歴)</h3>
-  <div class="grid grid_for_phone">
-    <% @record_ranks.each do |record| %>
-      <%= render partial: "shared/records", locals: { record: record } %>
-    <% end %>
-  </div>
-  <div class="ad_5"><%= link_to(image_tag(@ad_5__.img_url), @ad_5__.af_link)%></div>
-  <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
+  <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
 </section>
