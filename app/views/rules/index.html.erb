@@ -26,4 +26,12 @@
   <div class="pagi">
     <%= paginate @rules %>
   </div>
+  <div class="grid_">
+    <% @rule_ranks.each do |rule| %>
+      <%= render partial: "shared/rules", locals: { rule: rule } %>
+    <% end %>
+  </div>
+  <div class="space"></div>
+  <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
+  <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
 </section>

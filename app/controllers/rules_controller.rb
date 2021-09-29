@@ -10,6 +10,9 @@ class RulesController < ApplicationController
 
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
+    @rule_ranks = Rule.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
   def new

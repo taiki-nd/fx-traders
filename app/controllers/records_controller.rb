@@ -39,7 +39,6 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record_ranks = Record.last_week
     @comment_record = CommentRecord.new
     @comment_records = @record.comment_records
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
