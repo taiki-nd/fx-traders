@@ -144,7 +144,7 @@
 <%#      <%= link_to "NEXT >",record_path(@record.next_record), class: "btn_word" %>
 <%#    <% end %>
 <%#  </div> %>
-  
+  <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
   <h3>コメント</h3>
   <div class="container">
     <div id="likes_buttons_<%= @record.id %>">
@@ -182,5 +182,4 @@
   </div>
   <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
-  <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
 </section>
