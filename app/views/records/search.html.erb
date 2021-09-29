@@ -34,4 +34,5 @@
     <%= link_to "一覧に戻る", records_path, class: "btn_" %>
   <% end %>
   <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
+  <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
 </section>
