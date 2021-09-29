@@ -6,7 +6,7 @@
     <h2><span>new record</span></h2>
     <%= render partial: "shared/form_record", locals: { record: @record } %>
   </div>
-  <h3>取引履歴閲覧数トップ4</h3>
+  <h3>週間PV数TOP4(取引履歴)</h3>
   <div class="grid grid_for_phone">
     <% @record_ranks.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>

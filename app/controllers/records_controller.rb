@@ -31,7 +31,9 @@ class RecordsController < ApplicationController
   end
 
   def edit
-    
+    @record_ranks = Record.last_week
+    @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
+    @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
   end
 
   def update
