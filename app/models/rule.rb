@@ -1,5 +1,7 @@
 class Rule < ApplicationRecord
 
+  is_impressionable counter_cache: true
+
   with_options presence: true do
     validates :image
     validates :name

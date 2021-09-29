@@ -126,6 +126,9 @@
         <% end %>
       <% end %>
     </div>
+    <div>
+      <i class="fas fa-eye like-btn"></i>_<%= @rule.impressions_count %>
+    </div>
     <%= form_with model: [@rule, @comment_rule], url: rule_comment_rules_path(@rule), local: false do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
       <%= form.submit "SEND" %>

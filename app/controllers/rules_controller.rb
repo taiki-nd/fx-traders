@@ -6,6 +6,8 @@ class RulesController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_3_4, only: [:index, :search]
 
+  impressionist actions: [:index, :show]
+
   def index
     @rules = Rule.includes(:user).order("created_at DESC").page(params[:page]).per(20)
   end
@@ -47,6 +49,7 @@ class RulesController < ApplicationController
     @ad_5_ = Advertisement.where(ad_rate_id: 5).order("RAND()").second
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
     @ad_2_ = Advertisement.where(ad_rate_id: 2).order("RAND()").second
+    impressionist(@rule, nil, unique: [:session_hash])
   end
 
   def search

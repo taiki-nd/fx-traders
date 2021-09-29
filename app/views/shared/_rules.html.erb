@@ -16,6 +16,9 @@
       <div id="likes_buttons_<%= rule.id %>">
         <%= render partial: 'like_rules/like', locals: {rule: rule} %>
       </div>
+      <div>
+        <i class="fas fa-eye like-btn"></i>_<%= rule.impressions_count %>
+      </div>
       <p class="created_by">
         by <%= link_to rule.user.name, "/users/#{rule.user_id}", {class: "link_to_user"} %>
       </p>
