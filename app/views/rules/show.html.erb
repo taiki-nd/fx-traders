@@ -104,7 +104,7 @@
 <%#      <%= link_to "NEXT >",rule_path(@rule.next_rule), class: "btn_word" %>
 <%#    <% end %>
 <%#  </div> %>
-  
+  <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
   <h3>コメント</h3>
   <div class="container">
     <div id="likes_buttons_<%= @rule.id %>">

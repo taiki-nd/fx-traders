@@ -32,4 +32,5 @@
     該当する記録はありません
     <%= link_to "一覧に戻る", rules_path, class: "btn_" %>
   <% end %>
+  <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
 </section>
