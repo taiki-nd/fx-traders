@@ -67,6 +67,12 @@
             <td><%= @record.indi_sub.name %> </td>
           </tr>
         <% end %>
+        <% if @record.order != nil %>
+          <tr>
+            <th>注文方式</th>
+            <td><%= @record.order.name %> </td>
+          </tr>
+        <% end %>
         <% if @record.entry_rate != nil %>
           <tr>
             <th>エントリー価格</th>
