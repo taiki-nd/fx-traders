@@ -8,6 +8,7 @@
     <%= search_form_for @q, url: search_records_path do |f| %>
       <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '通貨ペアで検索' %>
       <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '時間足で検索' %>
+      <%= f.collection_select :indi_main_id_eq,IndiMain.all,:id,:name,include_blank: 'インジケーターで検索' %>
       <%= f.collection_select :kind_id_eq,Kind.all,:id,:name,include_blank: 'トレード種別で検索' %>
       <%= f.collection_select :issue_id_eq,Issue.all,:id,:name,include_blank: '勝敗で検索' %>
       <%= f.collection_select :lose_reason_id_eq,LoseReason.all,:id,:name,include_blank: '理由で検索' %>
