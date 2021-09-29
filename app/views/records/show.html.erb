@@ -166,6 +166,9 @@
         <% end %>
       <% end %>
     </div>
+    <div>
+      <i class="fas fa-eye like-btn"></i>_<%= @record.impressions_count %>
+    </div>
     <%= form_with model: [@record, @comment_record],url: record_comment_records_path(@record), local: false do |form| %>
       <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
       <%= form.submit "SEND" %>
