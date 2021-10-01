@@ -23,6 +23,11 @@ module ApplicationHelper
         image: image_url('logo.png'),
         local: 'ja-JP',
       },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@FX_Traders_',
+        image: image_url('sample.jpg')
+      }
     }
   end
 
