@@ -51,6 +51,7 @@ fx-traders
 | name               | string     | null: false              |
 | email              | string     | null: false, unique:true |
 | encrypted_password | string     | null: false              |
+| admin              | boolean    | default: false           |
 
 ### Association
 
@@ -71,6 +72,8 @@ fx-traders
 | ashi_id          | integer    | null: false                    |
 | kind_id          | integer    | null: false                    |
 | pair_id          | integer    | null: false                    |
+| indi_main_id     | integer    | null: false                    |
+| indi_sub_id      | integer    | null: false                    |
 | entry_rate       | float      | null: false                    |
 | exit_rate        | float      | null: false                    |
 | pips             | float      | null: false                    |
@@ -94,6 +97,8 @@ fx-traders
 | ashi_id          | integer    | null: false                    |
 | kind_id          | integer    | null: false                    |
 | pair_id          | integer    | null: false                    |
+| indi_main_id     | integer    | null: false                    |
+| indi_sub_id      | integer    | null: false                    |
 | overview         | string     | null: false                    |
 | overview_content | text       | null: false                    |
 | entry            | text       | null: false                    |
@@ -174,4 +179,4 @@ fx-traders
 
 
 ## er図
-[![Image from Gyazo](https://i.gyazo.com/3931df43cd6cf99121b18bcabdd92e49.png)](https://gyazo.com/3931df43cd6cf99121b18bcabdd92e49)
+[![Image from Gyazo](https://i.gyazo.com/6f7de4e4972139228d802fff24b6cefc.png)](https://gyazo.com/6f7de4e4972139228d802fff24b6cefc)

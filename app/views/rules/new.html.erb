@@ -1,7 +1,11 @@
+<div class="breadcrumbs">
+  <% breadcrumb :rule_new, @rule %>
+</div>
 <div class="content">
   <div class="container">
     <h2><span>new method</span></h2>
     <%= render partial: "shared/form_rule", locals: { rule: @rule } %>
   </div>
   <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
+  <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
 </div>

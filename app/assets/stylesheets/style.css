@@ -149,6 +149,10 @@ h4:before {
   color: #656869;
 }
 
+.number{
+  list-style: decimal;
+}
+
 /* header ---------------------------------------------------------------------*/
 
 #header{
@@ -430,8 +434,6 @@ form input[type="submit"]:hover {
 
 .rule{
   width: 90%;
-  height: fit-content;
-  display: inline-block;
   display: flex;
   border-bottom: 1px solid #212121;
 }
@@ -763,7 +765,6 @@ table td{
 
   .rule{
     width: 90%;
-    height: 100px;
     display: inline-block;
     display: flex;
     border-bottom: 1px solid #212121;

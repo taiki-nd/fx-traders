@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_2, only: [:index, :search, :show]
   before_action :set_record_rank, only: [:index, :new, :edit, :search, :show]
+  before_action :set_rule_rank, except: [:create, :update, :destroy]
 
   impressionist actions: [:index, :show]
 
@@ -84,6 +85,12 @@ class RecordsController < ApplicationController
     @record_ranks = Record.last_week
     @ad_2 = Advertisement.where(ad_rate_id: 2).order("RAND()").first
     @ad_5 = Advertisement.where(ad_rate_id: 5).order("RAND()").first
+  end
+
+  def set_rule_rank
+    to = Date.current.at_end_of_day
+    from = to - 1.week
+    @rule_ranks = Rule.includes(:user).where(created_at: from...to).order('impressions_count DESC').limit(4)
   end
 
 end
