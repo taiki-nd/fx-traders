@@ -1,7 +1,7 @@
 <% if @record.image.attached? %>
   <% set_meta_tags title: "#{@record.pair.name}で#{@record.pips}pips獲得した取引", description: "エントリー根拠：#{@record.entry_basis}", og:{image: image_url(url_for(@record.image))}, twitter:{image: image_url(url_for(@record.image))} %>
 <% else %>
-  <% set_meta_tags title: "#{@record.pair.name}で#{@record.pips}pips獲得した取引", description: "エントリー根拠：#{@record.entry_basis}", og:{image: image_url(url_for(@record.image))}, twitter:{image: image_url('sample.png')} %>
+  <% set_meta_tags title: "#{@record.pair.name}で#{@record.pips}pips獲得した取引", description: "エントリー根拠：#{@record.entry_basis}", og:{image: image_url('sample.png')}, twitter:{image: image_url('sample.png')} %>
 <% end %>
 <div class="breadcrumbs">
   <% breadcrumb :record_show, @record %>
