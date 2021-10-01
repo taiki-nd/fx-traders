@@ -147,7 +147,7 @@
   <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
   <h3>コメント</h3>
   <div class="container">
-    <div id="likes_buttons_<%= @record.id %>">
+    <div class="likes_buttons_<%= @record.id %>">
       <%= render partial: 'like_records/like', locals: { record: @record } %>
     </div>
     <div>

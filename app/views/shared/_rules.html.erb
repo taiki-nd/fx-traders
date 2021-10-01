@@ -13,7 +13,7 @@
       <p class="info">インジケーター：<%= rule.indi_main.name %></p>
     <% end %>
     <div class="record_small_info">
-      <div id="likes_buttons_<%= rule.id %>">
+      <div class="likes_buttons_<%= rule.id %>">
         <%= render partial: 'like_rules/like', locals: {rule: rule} %>
       </div>
       <div>
