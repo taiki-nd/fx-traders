@@ -5,14 +5,16 @@
   <p>自身の取引を記録することでデータを作りグラフ化していきます。</p>
   <p>自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！</p>
   <%= image_tag 'record_date.png', class: "top_img" %>
-  <div class="for_user">
-    <div class="btn btn--white btn--radius">
-      <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
+  <% unless user_signed_in? %>
+    <div class="for_user">
+      <div class="btn btn--white btn--radius">
+        <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
+      </div>
+      <div class="btn btn--white btn--radius">
+        <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
+      </div>
     </div>
-    <div class="btn btn--white btn--radius">
-      <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
-    </div>
-  </div>
+  <% end %>
   <h2><span>みんなの取引記録をみてみよう！</span></h2>
     <div class="grid">
     <% @records.each do |record| %>
@@ -29,14 +31,16 @@
     <li>取引手法をブラッシュアップ</li>
     <li>他トレーダーの手法への理解</li>
   </ul>
-  <div class="for_user">
-    <div class="btn btn--white btn--radius">
-      <%= link_to "新規登録して手法を紹介する！", new_user_registration_path, class: "btn_word" %>
+  <% unless user_signed_in? %>
+    <div class="for_user">
+      <div class="btn btn--white btn--radius">
+        <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
+      </div>
+      <div class="btn btn--white btn--radius">
+        <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
+      </div>
     </div>
-    <div class="btn btn--white btn--radius">
-      <%= link_to "ログインして手法を紹介する！", new_user_session_path, class: "btn_word" %>
-    </div>
-  </div>
+  <% end %>
   <h2><span>みんなの取引手法をみてみよう！</span></h2>
   <div class="grid_ grid__res">
     <% @rules.each do |rule| %>
