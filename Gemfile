@@ -82,5 +82,4 @@ gem 'gretel'
 gem 'sitemap_generator'
 gem 'whenever'
 gem 'impressionist'
-
 gem "aws-sdk-s3", require: false
