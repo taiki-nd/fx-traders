@@ -1,4 +1,4 @@
-<% set_meta_tags title: "#{@rule.name}", description: "#{@rule.entry}" %>
+<% set_meta_tags title: "#{@rule.name}", description: "#{@rule.entry}", keywords: "fx, #{@rule.pair.name}, 取引手法", og:{image: image_url(url_for(@rule.image))}, twitter:{image: image_url(url_for(@rule.image))} %>
 <div class="breadcrumbs">
   <% breadcrumb :rule_show, @rule %>
 </div>
