@@ -79,6 +79,7 @@
       <%= render partial: "shared/rules", locals: { rule: rule } %>
     <% end %>
   </div>
+  <div class="space"></div>
   <%= link_to 'もっと見る', user_index_rules_path(@user.id) , class: "link_to_user" %>
   <% if user_signed_in? && current_user.id == @user.id %>
     <h3><%= @name %>さんの専用エリア</h3>
