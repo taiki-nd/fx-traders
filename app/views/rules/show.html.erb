@@ -68,19 +68,27 @@
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
   <div class="entry_basis">
     <h2><%= @rule.overview %></h2>
-    <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
+      </div>
   </div>
   <div class="entry_basis">
     <h2>エントリータイミング</h2>
-    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+    </div>
   </div>
   <div class="entry_basis">
     <h2>決済タイミング</h2>
-    <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
+    </div>
   </div>
   <div class="lose_reason">
     <h2>今回の取引の総括</h2>
-    <%= safe_join(@rule.exit.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@rule.exit.split("\n"),tag(:br)) %>
+    </div>
   </div>
   <% if user_signed_in? && current_user.id == @rule.user_id %>
     <div class="lose_reason">

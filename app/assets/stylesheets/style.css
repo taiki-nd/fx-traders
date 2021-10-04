@@ -546,6 +546,11 @@ table td{
   border-bottom: 1px solid #656869;
 }
 
+.show_content{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .ad_2_show{
   display: none;
 }

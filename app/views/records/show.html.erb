@@ -119,11 +119,15 @@
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
   <div class="entry_basis">
     <h2>エントリーした根拠</h2>
-    <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
+    </div>
   </div>
   <div class="lose_reason">
     <h2>今回の取引の総括</h2>
-    <%= safe_join(@record.lose_reason_text.split("\n"),tag(:br)) %>
+    <div class="show_content">
+      <%= safe_join(@record.lose_reason_text.split("\n"),tag(:br)) %>
+    </div>
   </div>
   <% if user_signed_in? && current_user.id == @record.user_id %>
     <div class="lose_reason">
