@@ -3,7 +3,7 @@
   <% breadcrumb :rule_show, @rule %>
 </div>
 <section class="content">
-  <h2><span><%= @rule.name %></span></h2>
+  <h1><span><%= @rule.name %></span></h1>
   
 <%#  <div class="move_page">
 <%#    <% if @rule.previous_rule.present? %>
@@ -16,11 +16,11 @@
   
   <div class="record_content">
     <div class="left_content">
-      <h3>取引画像</h3>
+      <h2>取引画像</h2>
       <%= link_to image_tag(@rule.image, class:"recorded_img_show") %>
     </div>
     <div class="right_content">
-      <h3>取引概要</h3>
+      <h2>取引概要</h2>
       <table>
         <tr>
           <th>推奨通貨ペア</th>
@@ -67,24 +67,24 @@
   <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
   <div class="entry_basis">
-    <h3><%= @rule.overview %></h3>
+    <h2><%= @rule.overview %></h2>
     <%= safe_join(@rule.overview_content.split("\n"),tag(:br)) %>
   </div>
   <div class="entry_basis">
-    <h3>エントリータイミング</h3>
+    <h2>エントリータイミング</h2>
     <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
   </div>
   <div class="entry_basis">
-    <h3>決済タイミング</h3>
+    <h2>決済タイミング</h2>
     <%= safe_join(@rule.entry.split("\n"),tag(:br)) %>
   </div>
   <div class="lose_reason">
-    <h3>今回の取引の総括</h3>
+    <h2>今回の取引の総括</h2>
     <%= safe_join(@rule.exit.split("\n"),tag(:br)) %>
   </div>
   <% if user_signed_in? && current_user.id == @rule.user_id %>
     <div class="lose_reason">
-      <h3>投稿者専用エリア</h3>
+      <h2>投稿者専用エリア</h2>
       <div class="for_user">
         <div class="btn btn--white btn--radius">
           <%= link_to '編集', edit_rule_path(@rule.id), class: 'btn_word' %>
@@ -105,7 +105,7 @@
 <%#    <% end %>
 <%#  </div> %>
   <%= render partial: "shared/rank_rule", locals: { rules: @rule_ranks } %>
-  <h3>コメント</h3>
+  <h2>コメント</h2>
   <div class="container">
     <div class="likes_buttons_<%= @rule.id %>">
       <%= render partial: 'like_rules/like', locals: {rule: @rule} %>
@@ -118,7 +118,7 @@
       <%= form.submit "SEND" %>
     <% end %>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h3>＜コメント一覧＞</h3>
       <div id="comments_area">
         <%= render partial: 'comment_rules/index', locals: { comments: @comment_rules } %>
       </div>

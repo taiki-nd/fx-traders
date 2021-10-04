@@ -9,9 +9,9 @@
 
 <section class="content">
   <% if @record.issue.id == 2 %>
-    <h2><span><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</span></h2>
+    <h1><span><%= @record.pair.name %>で<%= @record.pips %>pips獲得した取引の詳細</span></h1>
   <% else @record.issue.id == 3 %>
-    <h2><span><%= @record.date %>の取引記録</span></h2>
+    <h1><span><%= @record.date %>の取引記録</span></h1>
   <% end %>
 <%#  <div class="move_page">
 <%#    <% if request.referer&.include?("/users/") || request.referer&.include?("/index_records.") %>
@@ -32,7 +32,7 @@
 <%#  </div>  %>
   <div class="record_content">
     <div class="left_content">
-      <h3>取引画像</h3>
+      <h2>取引画像</h2>
       <% if @record.image.attached? %>
         <%= link_to image_tag(@record.image, class:"recorded_img_show") %>
       <% else %>
@@ -40,7 +40,7 @@
       <% end %>
     </div>
     <div class="right_content">
-      <h3>取引概要</h3>
+      <h2>取引概要</h2>
       <table>
         <tr>
           <th>取引日</th>
@@ -118,16 +118,16 @@
   <div class="ad_5"><%= link_to(image_tag(@ad_5__.img_url), @ad_5__.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2__.img_url), @ad_2__.af_link)%></div>
   <div class="entry_basis">
-    <h3>エントリーした根拠</h3>
+    <h2>エントリーした根拠</h2>
     <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
   </div>
   <div class="lose_reason">
-    <h3>今回の取引の総括</h3>
+    <h2>今回の取引の総括</h2>
     <%= safe_join(@record.lose_reason_text.split("\n"),tag(:br)) %>
   </div>
   <% if user_signed_in? && current_user.id == @record.user_id %>
     <div class="lose_reason">
-      <h3>投稿者専用エリア</h3>
+      <h2>投稿者専用エリア</h2>
       <div class="for_user">
         <div class="btn btn--white btn--radius">
           <%= link_to '編集', edit_record_path(@record.id), class: 'btn_word' %>
@@ -148,7 +148,7 @@
 <%#    <% end %>
 <%#  </div> %>
   <%= render partial: "shared/rank_record", locals: { records: @record_ranks } %>
-  <h3>コメント</h3>
+  <h2>コメント</h2>
   <div class="container">
     <div class="likes_buttons_<%= @record.id %>">
       <%= render partial: 'like_records/like', locals: { record: @record } %>
@@ -161,7 +161,7 @@
       <%= form.submit "SEND" %>
     <% end %>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h3>＜コメント一覧＞</h3>
       <div id="comments__area">
         <%= render partial: 'comment_records/index', locals: { comments: @comment_records } %>
       </div>

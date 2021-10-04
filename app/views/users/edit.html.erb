@@ -3,7 +3,7 @@
 </div>
 <div class="content">
   <div class="container_sign">
-    <h2><span>登録情報の変更</span></h2>
+    <h1><span>登録情報の変更</span></h1>
     
     <%= form_with model: current_user, local: true do |f|%>
 
@@ -21,7 +21,7 @@
         <%= f.submit "Update", data: { confirm: "メールアドレスを変更した場合はメールをご確認のうえ認証手続きを進めてください" }%>
       </div>
     <% end %>
-    <h3>パスワードの変更に関して</h3>
+    <h2>パスワードの変更に関して</h2>
     <p><b>以下の手順で進めてください</b></p>
     <ul class="number">
       <li>ログアウト</li>

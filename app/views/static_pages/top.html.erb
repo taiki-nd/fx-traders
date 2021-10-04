@@ -1,8 +1,8 @@
 <section class="content">
-  <h2><span>取引記録のノートを作ろう！</span></h2>
+  <h1><span>取引記録のノートを作ろう！</span></h1>
   <%= image_tag 'trading_note_.jpg', class: "top_img" %>
   <p class="catch">自分の取引記録が最強の取引教材になるその時まで</p>
-  <h2><span>自身の取引を可視化！</span></h2>
+  <h1><span>自身の取引を可視化！</span></h1>
   <p>自身の取引を記録することでデータを作りグラフ化していきます。</p>
   <p>自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！</p>
   <%= image_tag 'record_date.png', class: "top_img" %>
@@ -16,14 +16,14 @@
       </div>
     </div>
   <% end %>
-  <h2><span>みんなの取引記録をみてみよう！</span></h2>
+  <h1><span>みんなの取引記録をみてみよう！</span></h1>
     <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
   <%= link_to "もっと取引記録をみる", records_path, class: "btn_" %>
-  <h2><span>自身の取引手法の理解を深めよう！</span></h2>
+  <h1><span>自身の取引手法の理解を深めよう！</span></h1>
   <ul class="grid grid_res">
     <li>取引手法を明確化に</li>
     <li>自身の取引手法に対する深い理解</li>
@@ -42,7 +42,7 @@
       </div>
     </div>
   <% end %>
-  <h2><span>みんなの取引手法をみてみよう！</span></h2>
+  <h1><span>みんなの取引手法をみてみよう！</span></h1>
   <div class="grid_ grid__res">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>

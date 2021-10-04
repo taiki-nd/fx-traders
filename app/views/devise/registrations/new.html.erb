@@ -3,7 +3,7 @@
 </div>
 <div class="content">
   <div class="container_sign">
-    <h2><span>Sign up<span></h2>
+    <h1><span>Sign up<span></h1>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <ul>
         <li class='error_message'><%= render "devise/shared/error_messages", resource: resource %></li>

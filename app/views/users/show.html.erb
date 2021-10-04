@@ -3,7 +3,7 @@
   <% breadcrumb :user_show, @user %>
 </div>  
 <section class="content">
-  <h2><span><%= @name %>さんのページ</span></h2>
+  <h1><span><%= @name %>さんのページ</span></h1>
   <div class="ad_5"><%= link_to(image_tag(@ad_5_.img_url), @ad_5_.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2_.img_url), @ad_2_.af_link)%></div>
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
@@ -15,21 +15,21 @@
       <p>フォロワー : <%= link_to @user.followers.count, "/users/#{ @user.id }/followers" %>
     </div>
   </div>
-  <h3><%= @name %>さんの取引分析</h3>
-  <h4>獲得pips数</h4>
+  <h2><%= @name %>さんの取引分析</h2>
+  <h3>獲得pips数</h3>
   <p><b>全体</b><p>
   <%= column_chart @records_by_user.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
   <p><b>直近1ヶ月</b></p>
   <%= column_chart @records_by_user_month.group(:date).sum(:pips), xtitle: "date", ytitle: "pips" %>
   <div>
   </div>
-  <h4>全体勝率</h4>
+  <h3>全体勝率</h3>
   <div class="win_lose">
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
   </div>
   <%= pie_chart @records_by_user.group(:issue_id).count, donut: true, legend: false %>
   <p class="profit_factor">PF　:　<%= @all_pf.round(2) %></p>
-  <h4>通貨ペア別勝率/PF</h4>
+  <h3>通貨ペア別勝率/PF</h3>
   <p><b>全体</b></p>
   <div class="win_lose">
     <div class="blue"></div><p>勝ち</p><p>　/　</p><div class="red"></div><p>負け</p>
@@ -66,14 +66,14 @@
   </div>
   <div class="ad_5"><%= link_to(image_tag(@ad_5.img_url), @ad_5.af_link)%></div>
   <div class="ad_2_show"><%= link_to(image_tag(@ad_2.img_url), @ad_2.af_link)%></div>
-  <h3><%= @name %>さんの取引履歴</h3>
+  <h2><%= @name %>さんの取引履歴</h2>
   <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>
     <% end %>
   </div>
   <%= link_to 'もっと見る', user_index_records_path(@user.id), class: "link_to_user" %>
-  <h3><%= @name %>さんの取引手法</h3>
+  <h2><%= @name %>さんの取引手法</h2>
   <div class="grid_">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
@@ -82,7 +82,7 @@
   <div class="space"></div>
   <%= link_to 'もっと見る', user_index_rules_path(@user.id) , class: "link_to_user" %>
   <% if user_signed_in? && current_user.id == @user.id %>
-    <h3><%= @name %>さんの専用エリア</h3>
+    <h2><%= @name %>さんの専用エリア</h2>
     <div class="btn btn--white btn--radius">
       <%= link_to '編集', edit_user_path(current_user.id), class: 'btn_word' %>
     </div>

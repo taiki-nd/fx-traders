@@ -3,7 +3,7 @@
   <% breadcrumb :user_rules, @user %>
 </div>
 <section class="content">
-  <h2><span><% @user.name %>さんの取引手法</span></h2>
+  <h1><span><% @user.name %>さんの取引手法</span></h1>
   <div class="grid_">
     <% @rules.each_slice(8) do |rules| %>
       <% rules.each do |rule| %>
