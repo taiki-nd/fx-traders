@@ -34,6 +34,8 @@ namespace :deploy do
   end
 end
 
+after 'deploy:restart', 'deploy:sitemap'
+
 desc 'Generate sitemap'
   task :sitemap do
     on roles(:app) do
@@ -43,4 +45,4 @@ desc 'Generate sitemap'
     end
   end
 
-  after 'deploy:restart', 'deploy:sitemap'
+  
