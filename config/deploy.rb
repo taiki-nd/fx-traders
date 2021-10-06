@@ -26,10 +26,18 @@ set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
-
+after  'deploy:finished', 'deploy:sitemap'
 
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
+  end
+  desc 'Generate sitemap'
+  task :sitemap do
+    on roles(:app) do
+      within release_path do
+        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+      end
+    end
   end
 end
