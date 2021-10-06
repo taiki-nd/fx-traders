@@ -26,7 +26,7 @@ set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:restart', 'deploy:sitemap'
+
 
 namespace :deploy do
   task :restart do
@@ -42,3 +42,5 @@ desc 'Generate sitemap'
       end
     end
   end
+
+  after 'deploy:restart', 'deploy:sitemap'
