@@ -33,16 +33,3 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
-
-after 'deploy:restart', 'deploy:sitemap'
-
-desc 'Generate sitemap'
-  task :sitemap do
-    on roles(:app) do
-      within release_path do
-        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
-      end
-    end
-  end
-
-  
