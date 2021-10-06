@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
   before_action :set_ad_2, only: [:index, :search, :show]
-  before_action :set_record_rank, only: [:index, :new, :edit, :search, :show]
+  before_action :set_record_rank, only: [:index, :search, :show]
   before_action :set_rule_rank, except: [:create, :update, :destroy]
 
   impressionist actions: [:index, :show]

@@ -400,7 +400,7 @@ form input[type="submit"]:hover {
 
 .recorded_img{
   height: 200px;
-  max-width: 300px;
+  width: 300px;
   object-fit: cover;
 }
 
