@@ -44,11 +44,11 @@ img{
 }
 
 .catch{
-  width: 100% - 1rem;
   font-size: 1.5rem;
   text-align: center;
-  margin: 50px 0;
+  margin: 50px;
   padding: 1rem;
+  border-radius: 20px;
   color: #000000;
   background-image: linear-gradient(to left, #86ffeb 0%, #9fe4ff 100%);
 }
@@ -734,14 +734,6 @@ table td{
   h3{
     font-size: 1.1rem;
     margin: 15px;
-  }
-
-  .catch{
-    width: 100% - 0.5rem;
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 25px;
-    padding: 0.5rem;
   }
   
   .none{
