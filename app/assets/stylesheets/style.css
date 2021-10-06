@@ -246,7 +246,13 @@ h3:before {
 
 .line-btn{
   font-size: 1.5rem;
-  color: #3cdb64;
+  color: #41f36e;
+  margin-left: 10px;
+}
+
+.twitter-btn{
+  font-size: 1.5rem;
+  color: #42b3ff;
   margin-left: 10px;
 }
 

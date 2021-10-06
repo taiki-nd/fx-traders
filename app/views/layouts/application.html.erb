@@ -48,15 +48,21 @@
             <li class="navi"><%= link_to '新規登録', new_user_registration_path %></li>
           <% end %>
         </ul>
-        <% if user_signed_in? %>
+        
         <ul class="navi_pages">
+          <% if user_signed_in? %>
+            <li class="navi">
+            <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
+              お問い合わせ<i class="fab fa-line line-btn"></i>
+            <% end %>
+          </li>
+          <% end %>
           <li class="navi">
           <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
-            お問い合わせ<i class="fab fa-line line-btn"></i>
+            twitter<i class="fab fa-twitter-square twitter-btn"></i>
           <% end %>
           </li>
         </ul>
-        <% end %>
       </nav>
   
       <div class="toggle_btn">
