@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://fx-traders.herokuapp.com/"
+SitemapGenerator::Sitemap.default_host = "https://fxtraders.jp"
 
   add records_path, changefreq: 'daily'
   Record.find_each do |record|
