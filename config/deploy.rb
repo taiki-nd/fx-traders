@@ -42,4 +42,3 @@ desc 'Generate sitemap'
       end
     end
   end
-end
