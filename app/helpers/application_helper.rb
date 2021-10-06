@@ -6,7 +6,7 @@ module ApplicationHelper
       title: 'トップページ',
       reverse: true,
       charset: 'utf-8',
-      description: 'fxの取引の記録を残して、自身の取引精度を上げていきましょう！自身の手法を公開してフィードバックをもらいましょう！',
+      description: '「自分の取引記録が最高の取引教材になるその時まで」。fxの取引の記録を残して、自身の取引精度を上げていきましょう！自身の手法を公開してフィードバックをもらいましょう！',
       keywords: 'fx,取引記録,投資',
       canonical: request.original_url,
       separator: '|',

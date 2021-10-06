@@ -44,15 +44,13 @@ img{
 }
 
 .catch{
+  width: 100% - 1rem;
   font-size: 1.5rem;
   text-align: center;
-  margin: 50px;
-  padding: 1rem 3rem;
+  margin: 50px 0;
+  padding: 1rem;
   color: #000000;
-  border-radius: 25vh;
-  background-image: -webkit-gradient(linear, right top, left top, from(#97fcff), to(#7aaef1));
-  background-image: -webkit-linear-gradient(right, #92afff 0%, #75d3ff 100%);
-  background-image: linear-gradient(to left, #a1ffef 0%, #bdecff 100%);
+  background-image: linear-gradient(to left, #86ffeb 0%, #9fe4ff 100%);
 }
 
 .sub_title{
@@ -739,9 +737,11 @@ table td{
   }
 
   .catch{
+    width: 100% - 0.5rem;
     font-size: 1.5rem;
     text-align: center;
     margin: 25px;
+    padding: 0.5rem;
   }
   
   .none{
