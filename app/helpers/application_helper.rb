@@ -20,15 +20,13 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('trading_note.png'),
+        image: asset_pack_url('trading_note.png'),
         local: 'ja-JP',
       },
       twitter: {
         card: 'summary_large_image',
         site: '@FX_Traders_',
-        image: image_url('trading_note.png'),
-        width: 100,
-        height: 100
+        image: asset_pack_url('trading_note.png'),
       }
     }
   end
