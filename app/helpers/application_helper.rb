@@ -20,13 +20,13 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('https://fx-traders.s3.ap-northeast-1.amazonaws.com/scott-graham-5fNmWej4tAA-unsplash.jpg'),
+        image: image_url('trading_note_.png'),
         local: 'ja-JP',
       },
       twitter: {
         card: 'summary_large_image',
         site: '@FX_Traders_',
-        image: image_url('https://fx-traders.s3.ap-northeast-1.amazonaws.com/scott-graham-5fNmWej4tAA-unsplash.jpg'),
+        image: image_url('trading_note_.png'),
       }
     }
   end
