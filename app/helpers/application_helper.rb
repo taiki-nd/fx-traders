@@ -20,13 +20,13 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('https://fxtraders.jp/assets/trading_note_-eb8ea1dd0a0fa75cf612022d5d254aecfc2a085b291d11dee605233d84b7299b.jpg'),
+        image: image_url('https://fx-traders.s3.ap-northeast-1.amazonaws.com/scott-graham-5fNmWej4tAA-unsplash.jpg'),
         local: 'ja-JP',
       },
       twitter: {
         card: 'summary_large_image',
         site: '@FX_Traders_',
-        image: image_url('https://fxtraders.jp/assets/trading_note_-eb8ea1dd0a0fa75cf612022d5d254aecfc2a085b291d11dee605233d84b7299b.jpg'),
+        image: image_url('https://fx-traders.s3.ap-northeast-1.amazonaws.com/scott-graham-5fNmWej4tAA-unsplash.jpg'),
       }
     }
   end
