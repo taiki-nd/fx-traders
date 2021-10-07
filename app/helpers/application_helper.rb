@@ -27,6 +27,8 @@ module ApplicationHelper
         card: 'summary_large_image',
         site: '@FX_Traders_',
         image: image_url('trading_note.png'),
+        width: 100,
+        height: 100
       }
     }
   end
