@@ -12,6 +12,10 @@ h2{
   margin: 20px;
 }
 
+.for_top{
+  text-align: center;
+}
+
 h3{
   font-size: 1.3rem;
   margin: 15px;
@@ -83,9 +87,10 @@ img{
 }
 
 h2 {
-  width: 80%;
+  width: fit-content;
   position: relative;
   padding: 1rem .5rem;
+  margin: 25px auto 25px;
 }
 
 h2:before,
