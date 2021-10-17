@@ -9,10 +9,10 @@
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
   <div class="follow_reration">
     <div class="btn">
-      <p>フォロー : <%= link_to @user.followings.count, "/users/#{ @user.id }/followings" %>
+      <p><%= link_to "フォロー : #{@user.followings.count}", "/users/#{ @user.id }/followings" %>
     </div>
     <div class="btn">
-      <p>フォロワー : <%= link_to @user.followers.count, "/users/#{ @user.id }/followers" %>
+      <p> <%= link_to "フォロワー : #{@user.followers.count}", "/users/#{ @user.id }/followers" %>
     </div>
   </div>
   <h2><%= @name %>さんの取引分析</h2>

@@ -612,18 +612,16 @@ table td{
 
 .btn{
   background-color: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #212121;
   font-size: 18px;
   width: 300px;
   text-align: center;
+  text-decoration: none;
 }
 
 .btn:hover {
   background-color: #bbbbbb;
-  border: 1px solid #bbbbbb;
   width: 300px;
-  border-radius: 20px;
+  text-decoration: none;
 }
 
 /* いいね関連 -------------------------------------------------------------------*/
@@ -893,8 +891,6 @@ table td{
 
   .btn{
     background-color: #ffffff;
-    border-radius: 20px;
-    border: 1px solid #212121;
     font-size: 18px;
     width: 200px;
     text-align: center;
