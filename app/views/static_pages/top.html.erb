@@ -1,10 +1,10 @@
 <% set_meta_tags title: '取引ノートを作ろう！最高の取引教材はあなたの取引記録です！' %>
 <section class="content">
-  <h1><span>取引記録のノートを作ろう！</span></h1>
+  <h1><span>取引記録のノートを作ろう！!</span></h1>
   <%= image_tag 'trading_note_.jpg', class: "top_img" %>
   <p class="catch">自分の取引記録が最高の取引教材になるその時まで</p>
 
-  <h2>公開する取引ノートを作るメリット</h2>
+  <h1>公開する取引ノートを作るメリット</h1>
   <ul>
     <li class="benefit">取引ルールが明確になる</li>
     <li class="benefit">取引ルールを守れるようになる</li>
@@ -14,12 +14,12 @@
     <li class="benefit">他トレーダーの記録で勉強できる</li>
   </ul>
 
-  <h2>取引ノートで自身の取引を可視化！</h2>
+  <h1>取引ノートで自身の取引を可視化！</h1>
   <p>自身の取引を記録することでデータを作りグラフ化していきます。</p>
   <p>自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！</p>
   <%= image_tag 'record_date.png', class: "top_img" %>
 
-  <h2>みんなの取引記録をみてみよう！</h2>
+  <h1>みんなの取引記録をみてみよう！</h1>
     <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/records", locals: { record: record } %>
@@ -37,7 +37,7 @@
     </div>
   <% end %>
 
-  <h2>みんなの取引手法をみてみよう！</h2>
+  <h1>みんなの取引手法をみてみよう！</h1>
   <div class="grid_ grid__res">
     <% @rules.each do |rule| %>
       <%= render partial: "shared/rules", locals: { rule: rule } %>
