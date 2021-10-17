@@ -2,20 +2,22 @@
   <h1><span>取引記録のノートを作ろう！</span></h1>
   <%= image_tag 'trading_note_.jpg', class: "top_img" %>
   <p class="catch">自分の取引記録が最高の取引教材になるその時まで</p>
+
+  <h1><span>公開する取引ノートを作るメリット</span></h1>
+  <ul>
+    <li class="benefit">取引ルールが明確になる</li>
+    <li class="benefit">取引ルールを守れるようになる</li>
+    <li class="benefit">自身の取引に対する理解が深まる</li>
+    <li class="benefit">取引ルールのブラッシュアップ</li>
+    <li class="benefit">取引記録に対するフィードバック</li>
+    <li class="benefit">他トレーダーの記録で勉強できる</li>
+  </ul>
+
   <h1><span>自身の取引を可視化！</span></h1>
   <p>自身の取引を記録することでデータを作りグラフ化していきます。</p>
   <p>自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！</p>
   <%= image_tag 'record_date.png', class: "top_img" %>
-  <% unless user_signed_in? %>
-    <div class="for_user">
-      <div class="btn btn--white btn--radius">
-        <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
-      </div>
-      <div class="btn btn--white btn--radius">
-        <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
-      </div>
-    </div>
-  <% end %>
+
   <h1><span>みんなの取引記録をみてみよう！</span></h1>
     <div class="grid">
     <% @records.each do |record| %>
@@ -23,15 +25,6 @@
     <% end %>
   </div>
   <%= link_to "もっと取引記録をみる", records_path, class: "btn_" %>
-  <h1><span>自身の取引手法の理解を深めよう！</span></h1>
-  <ul class="grid grid_res">
-    <li>取引手法を明確化に</li>
-    <li>自身の取引手法に対する深い理解</li>
-    <li>取引手法のルールを守るため</li>
-    <li>自身の取引手法に対するフィードバック</li>
-    <li>取引手法をブラッシュアップ</li>
-    <li>他トレーダーの手法への理解</li>
-  </ul>
   <% unless user_signed_in? %>
     <div class="for_user">
       <div class="btn btn--white btn--radius">
@@ -42,6 +35,7 @@
       </div>
     </div>
   <% end %>
+
   <h1><span>みんなの取引手法をみてみよう！</span></h1>
   <div class="grid_ grid__res">
     <% @rules.each do |rule| %>
@@ -49,6 +43,16 @@
     <% end %>
   </div>
   <%= link_to "もっと取引手法をみる", rules_path, class: "btn_" %>
+  <% unless user_signed_in? %>
+    <div class="for_user">
+      <div class="btn btn--white btn--radius">
+        <%= link_to "新規登録して取引を記録する！", new_user_registration_path, class: "btn_word" %>
+      </div>
+      <div class="btn btn--white btn--radius">
+        <%= link_to "ログインして取引を記録する！", new_user_session_path, class: "btn_word" %>
+      </div>
+    </div>
+  <% end %>
   <div class="space">
   </div>
 </section>

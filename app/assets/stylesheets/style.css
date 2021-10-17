@@ -336,6 +336,13 @@ h3:before {
   object-fit: cover;
 }
 
+.benefit{
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
 /* 入力系 ---------------------------------------------------------------------*/
 
 form input,
@@ -759,10 +766,6 @@ table td{
   }
 
   /* 一覧表示 ----------------------------------------------------------------------------*/
-
-  .grid_res{
-    display: block;
-  }
 
   .grid_for_phone{
     display: flex;
