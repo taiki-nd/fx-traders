@@ -17,6 +17,7 @@ class LoseReason < ActiveHash::Base
     { id: 14, name: 'エントリーが早過ぎたが勝てた' },
     { id: 15, name: 'エントリーが遅過ぎたが勝てた' },
     { id: 16, name: 'ルール通りに取引ができて勝てた' },
+    { id: 18, name: 'ポジポジ病' },
     { id: 17, name: 'その他' }
   ]
  
