@@ -10,8 +10,7 @@ fx-traders
 以上3つが基本機能になります。
 
 # URL
-
-# テスト用アカウント
+https://fxtraders.jp/
 
 # 利用方法
 
