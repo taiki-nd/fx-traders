@@ -13,7 +13,16 @@ fx-traders
 https://fxtraders.jp/
 
 # 利用方法
+1. 右上メニューバーをクリックして新規登録をクリック
+[![Image from Gyazo](https://i.gyazo.com/389de7b014ad186a48d130ce8df2aec0.jpg)](https://gyazo.com/389de7b014ad186a48d130ce8df2aec0)
 
+2. 新規登録をする
+[![Image from Gyazo](https://i.gyazo.com/8f1a2e625d0fa06a9b490c76b00847e3.jpg)](https://gyazo.com/8f1a2e625d0fa06a9b490c76b00847e3)
+:::
+メール認証があります。実際利用されているメールアドレスをご利用ください。
+:::
+[![Image from Gyazo](https://i.gyazo.com/933ae93e459cf6c9d583475c8e3cf689.png)](https://gyazo.com/933ae93e459cf6c9d583475c8e3cf689)
+メールを確認の上、Confirm my accountをクリックし新規登録を完了してください。
 # 目指した課題解決
 
 コロナ禍で投資を始めている人が多くいる中、その記録をつける人は少なく増やすべき資産を減らしている人が多いと予想されます。
