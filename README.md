@@ -4,10 +4,8 @@ fx-traders
 
 # アプリケーション概要
 
-* 取引記録の投稿
-* 取引手法の投稿
-* コメントの投稿
-以上3つが基本機能になります。
+取引記録の投稿をもとに分析し現状を把握できるアプリケーション
+[![Image from Gyazo](https://i.gyazo.com/738d0540f2f42d0fed7013dbd94743a1.jpg)](https://gyazo.com/738d0540f2f42d0fed7013dbd94743a1)
 
 # URL
 https://fxtraders.jp/
