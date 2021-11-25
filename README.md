@@ -39,6 +39,57 @@ https://fxtraders.jp/
 本アプリでは、取引記録を一覧しまとめることで次の取引に生かすことができるだけでなく、
 その記録を公開し他ユーザーから意見をもらいながら取引に生かすことができ、資産を増やすための手がかりになるものと考えます。
 
+# 実装事項
+## 取引記録
+* 投稿
+* 編集
+* 削除
+* 検索（gem, ransack）
+* 画像投稿（gem, active storage）
+* いいね機能（ajax, font awesome）
+
+## 取引手法
+* 投稿
+* 編集
+* 削除
+* 検索（rgem, ansack）
+* 画像投稿（gem, active storage）
+* いいね機能（ajax, font awesome）
+
+## コメント
+* 投稿（ajax）
+* 削除（ajax）
+
+## ユーザー関連
+* フォロー機能
+* グラフ表示（gem, chartkick）
+* メール認証機能
+* 管理者機能
+
+## seo対策
+* メタtag（gem, meta_tags）
+* ぱんクズリスト（gem, gretel）
+* サイトマップ（gem, sitemap_generator）
+* サイトマップの自動更新（gem, whenever）
+
+## デプロイ
+* aws（ec2, s3, route53）
+* mysql（maria DB）
+* Unicorn
+* Nginx
+* 自動デプロイ（gem, Capistrano）
+* ssl証明（AWS, ACM）
+
+## その他
+* ページネーション
+* 日本語対応（gem, rails-i18n）
+* 広告のランダム表示
+* 問い合わせ（ライン公式, font awesome）
+* ハンバーガーメニュー
+* PV数(閲覧数)取得（gem, impressionist）
+* OGPの設定（gem, meta-tags）
+* レスポンシブ対応
+
 # 要件定義
 
 | 優先順位(高：3、中：2、低：1) | 機能 | 目的 | 詳細 | ストーリー | 見積もり(所要時間) | 
